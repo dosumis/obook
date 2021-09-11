@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>About using images in Git/GitHub - OBO Semantic Engineering Training</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "About using images in Git/GitHub";
+    var mkdocs_page_input_path = "images/index.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> OBO Semantic Engineering Training</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">About the course</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../getting_started/">Getting started with learning</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../contributing/">Contribe to the course</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="" href="../cite.md">Table of contents</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Lessons</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../lesson/contributing_to_obo_ontologies/">Contributing to OBO ontologies</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../lesson/ontology_pipelines/">Ontology Pipelines with ROBOT</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">How-to guides</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../howto/installing_elk_in_protege/">Installing ELK in Protege</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../howto/odk_setup/">Setting up the ODK</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">OBO Semantic Engineering Training</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>About using images in Git/GitHub</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="about-using-images-in-gitgithub">About using images in Git/GitHub<a class="headerlink" href="#about-using-images-in-gitgithub" title="Permanent link">&para;</a></h1>
+<p>There are two places you'll probaby want to use images in GitHub, in issue tracker and in markdown files, html etc.
+The way you handle images in these contexts is quite different, but easy once you get the hang of it.</p>
+<h2 id="in-markdown-files-and-html-etc">In markdown files (and html etc)<a class="headerlink" href="#in-markdown-files-and-html-etc" title="Permanent link">&para;</a></h2>
+<p>All images referenced in static files such as html and markdown need to be referenced using a URL; dragging and dropping is not supported and could actually cause problems. Keeping images in a single directory enables them to be referenced more readily. Sensible file names are highly recommended, preferably without spaces as these are hard to read when encoded.</p>
+<p>An identical file, named in two different ways is shown as an example below.
+They render in the same way, but the source "code" looks ugly when spaces are used in file names.</p>
+<p>Eg.</p>
+<table>
+<thead>
+<tr>
+<th>encoding needed</th>
+<th>no encoding needed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>![](github%20organizations%20teams%20repos.png</code></td>
+<td><code>![](github-organizations-teams-repos.png</code></td>
+</tr>
+<tr>
+<td><img alt="" src="github%20organizations%20teams%20repos.png" /></td>
+<td><img alt="" src="github-organizations-teams-repos.png" /></td>
+</tr>
+</tbody>
+</table>
+<p>In this example, the filename is enough of a 'url' because this file (https://ohsu-library.github.io/github-tutorial/howto/images/index.md) and the images are in the same directory https://ohsu-library.github.io/github-tutorial/howto/images/.</p>
+<p>To reference/embed an image that is <em>not</em> in the same directory, a more careful approach is needed.</p>
+<h3 id="referencing-images-in-your-repository-and-elsewhere">Referencing images in your repository and elsewhere<a class="headerlink" href="#referencing-images-in-your-repository-and-elsewhere" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Absolute path referencing</th>
+<th>Relative path referencing</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>![](https://github.com/OHSU-Library/github-tutorial/raw/master/docs/other-images/owl.jpg)</code></td>
+<td><code>![](../../other-images/owl.jpg)</code></td>
+</tr>
+<tr>
+<td><img alt="" src="https://github.com/OHSU-Library/github-tutorial/raw/master/docs/other-images/owl.jpg" /></td>
+<td><img alt="" src="../../other-images/owl.jpg" /></td>
+</tr>
+</tbody>
+</table>
+<p>Each instance of <code>../</code> means 'go up one level' in the file tree.</p>
+<p>It is also possible to reference an image using an external URL outside your control, in another github organization, or anywhere on the web, however this method can be fragile if the URL changes or could lead to unintended changes. Therefore make your own copies and reference those <strong>unless:</strong></p>
+<ul>
+<li>You're  sure that referencing the originals will not end in broken links or surprising content.</li>
+<li>Copying the image is prohibited</li>
+<li>The images are too large to make copying worth the hassle/expense.</li>
+</ul>
+<p>For example, it is not clear for how long the image below will manage to persist at this EPA link, or sadly, for how long the image will even be an accurate reflection of the current situation in the arctic. https://www.epa.gov/sites/production/files/styles/microsite_banner/public/2016-12/epa-banner-images/science_banner_arctic.png</p>
+<p><img alt="" src="https://www.epa.gov/sites/production/files/styles/microsite_banner/public/2016-12/epa-banner-images/science_banner_arctic.png" /></p>
+<h2 id="in-github-issue-tracker">In GitHub issue tracker<a class="headerlink" href="#in-github-issue-tracker" title="Permanent link">&para;</a></h2>
+<p>Images that are embedded into <em>issues</em> can be dragged and dropped in the GitHub issues interface.
+Once you've done so, it will look something like this with GitHub assigning an arbitrary URL (githubuserassets) for the image.</p>
+<p><code>![](screenshot-of-images-in-issues.png)</code></p>
+<p><img alt="" src="screenshot-of-images-in-issues.png" /></p>
+<h2 id="sizing-images">Sizing images<a class="headerlink" href="#sizing-images" title="Permanent link">&para;</a></h2>
+<p>Ideally, a Markdown document is renderable in a variety of output formats and devices. In some cases, it may be desirable to create non-portable Markdown that uses HTML syntax to position images. This limits the longevity of the artifact, but may be necessary sometimes. We describe how to manage this below.</p>
+<p>In order to size images, use the native html syntax: <code>width =</code> with the &lt;img src=, as per below.</p>
+<p><code>&lt;img src="https://github.com/monarch-initiative/monarch-app/raw/master/image/Phenogrid3Compare.png" width="53"&gt;</code></p>
+<p><img src="https://github.com/monarch-initiative/monarch-app/raw/master/image/Phenogrid3Compare.png" width="53"></p>
+<h3 id="back-to-home"><a href="../../index">Back to Home</a><a class="headerlink" href="#back-to-home" title="Permanent link">&para;</a></h3>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Why do we need reasoning? - OBO Semantic Engineering Training</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Why do we need reasoning?";
+    var mkdocs_page_input_path = "reference/reasoning.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> OBO Semantic Engineering Training</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">About the course</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../getting_started/">Getting started with learning</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../contributing/">Contribe to the course</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="" href="../../cite.md">Table of contents</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Lessons</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../lesson/contributing_to_obo_ontologies/">Contributing to OBO ontologies</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../lesson/ontology_pipelines/">Ontology Pipelines with ROBOT</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">How-to guides</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../howto/installing_elk_in_protege/">Installing ELK in Protege</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../howto/odk_setup/">Setting up the ODK</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">OBO Semantic Engineering Training</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Why do we need reasoning?</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="why-do-we-need-reasoning">Why do we need reasoning?<a class="headerlink" href="#why-do-we-need-reasoning" title="Permanent link">&para;</a></h1>
+<p>A quick personal perspective up-front. When I was finishing my undergrad, I barely had heard the term Semantic Web. What I had heard vaguely intrigued me, so I decided that for my final project, I would try to combine something Semantic Web related with my other major, Law and build a tool that could automatically infer the applicability of a law (written in OWL) given a legal case. Super naively, I just went went ahead, read a few papers about legal ontologies, build a simple one, loaded it into my application and somehow got it to work, with reasoning and all, without even having heard of Description Logic. </p>
+<p>In my PhD, I worked on actual reasoning algorithms, which meant, no more avoiding logic. But - I did not get it. Up until this point in my life, I could just study harder and harder, and in the end I was confident with what I learned, but First Order Logic, in particular model theory and proofs, caused me anxiety until the date of my viva. In the end, a very basic understanding of model theory and Tableau did help me with charactering the algorithms I was working with (I was studying the effect of modularity, cutting out logically connected subsets of an ontology, on reasoning performance) but I can confidently say today: I never really, like deeply, understood logical proofs. I still cant read them - and I have a PhD in Reasoning (albeit from an empirical angle).</p>
+<p>If you followed the Open HPI courses on logic, and you are anything like me, your head will hurt and you will want to hide under your blankets. Most students feel like that. For a complete education in Semantic Web technologies, going through this part once is essential: it tells you something about how difficult some stuff is under the hood, and how much work has been done to make something like OWL work for knowledge representation. You should have gained some appreciation of the domain, which is no less complex than Machine Learning or Stochastic Processes. But, in my experience, some of the most effective ontology engineers barely understand reasoning - definitely have no idea how it works - and still do amazing work. In that spirit, I would like to invite you at this stage to put logic and reasoning behind you (unless it made you curious of course) - you won't need to know much of that for being an effective Semantic Engineer. In the following, I will summarise some of the key take-aways that I find useful to keep in mind.</p>
+<ul>
+<li><em>Semantics define how to interpret an ontology</em>. For example, in OWL, the statement <code>Human SubClassOf: Mammal</code> means that all instances of the <code>Human</code> class, like me, are also instances of the <code>Mammal</code> class. Or, in other words, from the statements:</li>
+</ul>
+<pre><code>Human SubClassOf: Mammal
+Nico type: Human
+</code></pre>
+<p>Semantics allow as to deduce that <code>Nico:Mammal</code>. What are semantics <em>practically</em>? Show me your semantics? Look at something like the <a href="https://www.w3.org/TR/owl2-direct-semantics/">OWL semantics</a>. In there, you will find language statements (syntax) like <code>X SubClassOf: Y</code> and a bunch of formulae from model theory that describe how to interpret it - no easy read, and not really important for you now.
+- <em>OWL has a number of profiles</em>, basically sub-languages where you can say less things. Why would we want to restrict our "expressivity"? Because their is a trade-off. An important slide I remember from when I learned about ontology languages was the triangle of complexity (here only paraphrased from memory):</p>
+<p><img alt="What is this" src="tradeoff.png" /> </p>
+<ol>
+<li>When expressivity goes up, cognitive complexity and computational complexity go up.</li>
+<li>When we want to decrease cognitive complexity (make it easier to build ontologies), expressivity goes down.</li>
+<li>When we want reasoners to be faster at making inferences (computational complexity), we need to decrease expressivity.
+So we need to find a way to balance.</li>
+<li>What are the most important practical applications of reasoning? There are many, and there will be many opinions, but in the OBO world, by far (95%) of all uses of reasoners pertain to the following:</li>
+<li>Classification. Most, if not all, of our ontologies are conceptually hierarchies of classes we use reasoners to automatically infer hierarchies. Look for example at the <a href="https://github.com/obophenotype/xenopus-phenotype-ontology">Xenopus Phenotype Ontology</a> - the class hierarchy is entirely build with a reasoner - no Human intervention!</li>
+<li>Debugging. There are two major threats to ontologies. In the worst case, they can be <code>inconsistent</code> - which means, totally broken. A slightly less bad, but still undesirable situation is that some of the classes in your ontologies break (in parlance, become unsatisfiable). This happens when you say some contradictory things about them. Reasoners help you find these unsatisfiable classes, and there is a special reasoning algorithm that can generate an explanation for you - to help fixing your problem.</li>
+<li>So in general, what <em>is</em> reasoning? There are probably a dozen or more official characterisations in the scientific literature, but from the perspective of biomedical ontologies, the question can be roughly split like this:</li>
+<li><em>How can we capture what we know?</em> This is the (research-) area of knowledge representation, logical formalisms, such as First Order Logic, Description Logic, etc. It is concerned with how we write down what we now:</li>
+</ol>
+<pre><code>All cars have four wheels
+If you are a human, you are also a mammal
+If you are a bird, you can fly (unless you are a penguin)
+</code></pre>
+<ol>
+<li><em>How can we uncover implicit knowledge efficiently?</em> This is the area of reasoning, and while being closely related to the formalisms above, it makes sense to think of them in a distinct manner, as the problems are very different in practice. It can typically be grouped into the following two categories:</li>
+<li><em>deductive reasoning</em> infers by</li>
+</ol>
+<p>Lets think about a naive approach: using a fact-, or data-, base.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

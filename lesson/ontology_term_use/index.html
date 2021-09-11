@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Using Ontologies and Ontology Terms - OBO Semantic Engineering Training</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Using Ontologies and Ontology Terms";
+    var mkdocs_page_input_path = "lesson/ontology_term_use.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> OBO Semantic Engineering Training</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">About the course</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../getting_started/">Getting started with learning</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../contributing/">Contribe to the course</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="" href="../../cite.md">Table of contents</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Lessons</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../contributing_to_obo_ontologies/">Contributing to OBO ontologies</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../ontology_pipelines/">Ontology Pipelines with ROBOT</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">How-to guides</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../howto/installing_elk_in_protege/">Installing ELK in Protege</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../howto/odk_setup/">Setting up the ODK</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">OBO Semantic Engineering Training</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Using Ontologies and Ontology Terms</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="using-ontologies-and-ontology-terms">Using Ontologies and Ontology Terms<a class="headerlink" href="#using-ontologies-and-ontology-terms" title="Permanent link">&para;</a></h1>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Sign up for a free <a href="https://github.com/join">GitHub</a> account</li>
+</ul>
+<h2 id="preparation">Preparation<a class="headerlink" href="#preparation" title="Permanent link">&para;</a></h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="what-is-delivered-as-part-of-the-course">What is delivered as part of the course<a class="headerlink" href="#what-is-delivered-as-part-of-the-course" title="Permanent link">&para;</a></h2>
+<p><strong>Description:</strong> Using ontology terms for annotations and structuring data.</p>
+<h3 id="learning-objectives">Learning objectives<a class="headerlink" href="#learning-objectives" title="Permanent link">&para;</a></h3>
+<ol>
+<li><a href="#explain">Explain why ontologies are useful</a></li>
+<li><a href="#find">Find good ontologies: ontology repositories, OBO</a></li>
+<li><a href="#repo">Find terms using ontology browsers</a></li>
+<li><a href="#assess">Assess ontologies for use: license, quality</a></li>
+<li><a href="#map">Map local terminology to ontology terms</a></li>
+<li><a href="#missing">Identify missing terms</a></li>
+<li><a href="#request">Make term requests to existing ontologies</a></li>
+<li><a href="#iri">Understand the differences between IRIs, CURIEs, and labels</a></li>
+</ol>
+<h2 id="tutorials">Tutorials<a class="headerlink" href="#tutorials" title="Permanent link">&para;</a></h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="additional-materials-and-resources">Additional materials and resources<a class="headerlink" href="#additional-materials-and-resources" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://douroucouli.wordpress.com/2021/07/03/how-select-and-request-terms-from-ontologies/">How select and request terms from ontologies</a> - Blog post by Chris Mungall</li>
+<li><a href="https://philpapers.org/archive/SEPGFW.pdf">Guidelines for writing definitions in Ontologies (paper)</a></li>
+<li><a href="https://douroucouli.wordpress.com/category/tutorials/">OntoTips</a> - A guide by Chris Mungall covering various aspects of ontology engineering.</li>
+</ul>
+<h2 id="contributors">Contributors<a class="headerlink" href="#contributors" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://orcid.org/0000-0001-5208-3432">Nicole Vasilevsky</a></li>
+</ul>
+<p><a name="explain"></a> </p>
+<h2 id="1-why-ontologies-are-useful">1. Why ontologies are useful<a class="headerlink" href="#1-why-ontologies-are-useful" title="Permanent link">&para;</a></h2>
+<p>Ontologies provide a logical classification of information in a particular domain or subject area. Ontologies can be used for data annotations, for structuring disparate data types, classifying information, for inferencing and reasoning across data and computational analyses.</p>
+<h3 id="difference-between-a-terminology-and-an-ontology">Difference between a terminology and an ontology<a class="headerlink" href="#difference-between-a-terminology-and-an-ontology" title="Permanent link">&para;</a></h3>
+<h4 id="terminology">Terminology<a class="headerlink" href="#terminology" title="Permanent link">&para;</a></h4>
+<p>A terminology is a collection of terms; a term can have a definition and synonyms.</p>
+<h4 id="ontology">Ontology<a class="headerlink" href="#ontology" title="Permanent link">&para;</a></h4>
+<p>An ontology contains a formal classification of terminology in a domain that provides textual and machine readable definitions, and defines the relationships between terms. An ontology is a terminology, but a terminology is not (necessarily) an ontology.</p>
+<p><a name="find"></a> </p>
+<h2 id="2-finding-good-ontologies">2. Finding good ontologies<a class="headerlink" href="#2-finding-good-ontologies" title="Permanent link">&para;</a></h2>
+<p>Numerous ontologies exist. Some recommended sources to find community developed, high quality and frequently used ontologies are listed below.</p>
+<ul>
+<li><a href="http://obofoundry.org/">OBO Foundry</a>. Read more <a href="#repo">below</a> </li>
+<li><a href="https://www.ebi.ac.uk/ols/ontologies">The Ontology Lookup Service (OLS)</a>. The OLS contains over 200 ontologies.</li>
+<li><a href="https://bioportal.bioontology.org/">BioPortal</a>. BioPortal aggregates almost 900 biomedical ontologies, and provides a search interface to look up terms. It is a popular repository for ontologies, but as only a fraction of the ontologies are reviewed by the OBO Foundry, you should carefully review any ontologies found on BioPortal before committing to use them.</li>
+<li><a href="http://www.ontobee.org/">Ontobee</a>. Ontobee indexes all 200+ OBO Foundry ontologies and is the default browser for OBO: For example, when you click http://purl.obolibrary.org/obo/IAO_0000112, you will be redirected to the a page in the Ontobee browser that describes the annotation property <code>example of usage</code>.</li>
+</ul>
+<p><a name="repo"></a> </p>
+<h2 id="3-ontology-repositories">3. Ontology repositories<a class="headerlink" href="#3-ontology-repositories" title="Permanent link">&para;</a></h2>
+<h3 id="obo-foundry">OBO Foundry<a class="headerlink" href="#obo-foundry" title="Permanent link">&para;</a></h3>
+<p>The <a href="http://obofoundry.org/">OBO Foundry</a> is a community of ontology developers that are committed to developing a library of ontologies that are open, interoperable ontologies, logically well-formed and scientifically accurate. OBO Foundry participants follow and contribute to the development of an evolving set of <a href="http://obofoundry.org/principles/fp-000-summary.html">principles</a> including open use, collaborative development, non-overlapping and strictly-scoped content, and common syntax and relations, based on ontology models that work well, such as the <a href="http://geneontology.org/">Gene Ontology (GO)</a>.</p>
+<p>The OBO Foundry is overseen by an <a href="http://obofoundry.org/docs/OperationsCommittee.html">Operations Committee</a> with Editorial, Technical and Outreach working groups.</p>
+<h3 id="find-terms-using-ontology-browsers">Find terms using ontology browsers<a class="headerlink" href="#find-terms-using-ontology-browsers" title="Permanent link">&para;</a></h3>
+<p>Various ontology browsers are available, we recommend using one of the ontology browsers listed below.</p>
+<ul>
+<li>Find terms:</li>
+<li><a href="https://www.ebi.ac.uk/ols/index">Ontology Lookup Service</a></li>
+<li><a href="https://bioportal.bioontology.org/">BioPortal</a></li>
+<li><a href="http://www.ontobee.org/">Ontobee</a></li>
+</ul>
+<p><a name="assess"></a> </p>
+<h2 id="4-assessing-ontologies-for-use">4. Assessing ontologies for use<a class="headerlink" href="#4-assessing-ontologies-for-use" title="Permanent link">&para;</a></h2>
+<p>Some considerations for determining which ontologies to use include the license and quality of the ontology.</p>
+<h3 id="license">License<a class="headerlink" href="#license" title="Permanent link">&para;</a></h3>
+<p>Licenses define how an ontology can legally be used or reused. One requirement for OBO Foundry Ontologies is that they are open, meaning that the ontologies are openly and freely available for use with acknowledgement and without alteration. OBO ontologies are required to be released under a Creative Commons <a href="https://creativecommons.org/licenses/by/3.0/">CC-BY license version 3.0 or later</a>, OR released into the public domain under <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a>. The license should be clearly stated in the ontology file.</p>
+<h3 id="quality">Quality<a class="headerlink" href="#quality" title="Permanent link">&para;</a></h3>
+<p>Some criteria that can be applied to determine the quality of an ontology include:</p>
+<ul>
+<li><strong>Is there an ontology tracker to report issues?</strong> All open ontologies should have some form of an issue tracker to report bugs, make new term requests or request other changes to the ontology. Many ontologies use GitHub to track their issues. </li>
+<li><strong>Is it currently active?</strong> Are there a large number of open tickets on the ontology tracker that have not been commented on or otherwise addressed? Are the tickets very old, have been sitting for years?</li>
+<li><strong>Commmunity involvement</strong> On the issue tracker, is there evidence of community involvement, such as issues and comments from outside community members?</li>
+<li><strong>Scientifically sound</strong> Does the ontology accurately represent the domain in a scientifically sound way?</li>
+</ul>
+<h3 id="how-to-determine-which-is-the-right-ontology-to-use">How to determine which is the right ontology to use?<a class="headerlink" href="#how-to-determine-which-is-the-right-ontology-to-use" title="Permanent link">&para;</a></h3>
+<ul>
+<li>There are multiple ontologies that exist, start by selecting the appropriate ontology, then search and restrict your search to that ontology.</li>
+<li>Recommend using ontologies that are open and interoperable. Focusing on OBO foundry ontologies are a good place to start</li>
+<li>Make informed decision about which ontology to use</li>
+<li>Maybe the ontology you want to use does not have the term you want, so <a href="#request">make a term request to that ontology</a></li>
+</ul>
+<p><a name="map"></a> </p>
+<h2 id="5-mapping-local-terminology-to-ontology-terms">5. Mapping local terminology to ontology terms<a class="headerlink" href="#5-mapping-local-terminology-to-ontology-terms" title="Permanent link">&para;</a></h2>
+<p>Data can mapped to ontology terms manually, using spreadsheets, or via curation tools such as:</p>
+<ul>
+<li><a href="https://bio.tools/zooma">Zooma</a></li>
+<li><a href="http://noctua.geneontology.org/workbench/noctua-landing-page/">Noctua</a> (designed for Gene Ontology curation)</li>
+<li><a href="https://bioportal.bioontology.org/annotator">BioPortal Annotator</a></li>
+<li><a href="http://gmod.org/wiki/Canto">Canto</a> - a web-based literature curation tools</li>
+<li><a href="http://www.textpresso.org/celegans/">Textpresso</a> - designed for C. elegans curation</li>
+<li><a href="https://opensource.nibr.com/projects/ontobrowser">OntoBrowser</a> - an online collaborative curation tool</li>
+</ul>
+<p><a name="missing"></a> </p>
+<h2 id="6-identifying-missing-terms">6. Identifying missing terms<a class="headerlink" href="#6-identifying-missing-terms" title="Permanent link">&para;</a></h2>
+<p>The figure below by <a href="https://bids.berkeley.edu/people/chris-mungall">Chris Mungall</a> on his blog post on <a href="https://douroucouli.wordpress.com/2021/07/03/how-select-and-request-terms-from-ontologies/">How to select and request terms from ontologies
+</a> describes a workflow on searching for identifying missing terms from an ontology. </p>
+<p><img alt="term search and request workflow" src="https://lh5.googleusercontent.com/gpGaVX6N85gdQkBP5aZORh3G_oA1B71Hf9P2Pobl0InlAY2P7U7XWkH1iv8rsQpJtOuW2bazkhYsSOxfFGod15TvMg21gOYLAv1mcVHxkAqQHPucBm6Su-tl2IWgJXFKwd9L2xbd" /></p>
+<p><a name="request"></a> </p>
+<h2 id="7-making-term-requests-to-existing-ontologies">7. Making term requests to existing ontologies<a class="headerlink" href="#7-making-term-requests-to-existing-ontologies" title="Permanent link">&para;</a></h2>
+<h3 id="making-a-new-term-request-to-mondo">Making a new term request to Mondo<a class="headerlink" href="#making-a-new-term-request-to-mondo" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Go to Mondo <a href="https://github.com/monarch-initiative/mondo/issues">GitHub tracker</a>: Select New issue</li>
+<li>Pick appropriate template</li>
+<li>Fill in the information that is requested on the template below each header</li>
+<li>Please include:<ol>
+<li>A definition in the proper format</li>
+<li>Sources/cross references for synonyms</li>
+<li>Your ORCID or the URL for your ClinGen working group</li>
+<li>Add any additional comments at the end</li>
+</ol>
+</li>
+<li>Nicole will automatically be tagged</li>
+<li>Please email Nicole or comment on the ticket (Nicole will be emailed) if you have any additional questions or need the ticket is high priority</li>
+</ol>
+<p>See <a href="https://drive.google.com/file/d/14g9y1nmCmRTkPB1fa6y_jIW3lHyFV4-g/view?resourcekey">video</a></p>
+<h3 id="best-practices-guidelines">Best practices guidelines<a class="headerlink" href="#best-practices-guidelines" title="Permanent link">&para;</a></h3>
+<p><strong>Note</strong>: We appreciate your contributions to extending and improving Mondo. Following best guidelines is appreciated by the curators and developers, and assists them in addressing your issue more quickly. However, we understand if you are not always able to follow these best practices.</p>
+<h3 id="general-recommendations">General Recommendations:<a class="headerlink" href="#general-recommendations" title="Permanent link">&para;</a></h3>
+<ol>
+<li>New term requests should not match existing terms or synonyms</li>
+<li>Write a concise definition in the definition field. More info about writing definitions is <a href="https://douroucouli.wordpress.com/2019/07/08/ontotip-write-simple-concise-clear-operational-textual-definitions/">here</a></li>
+<li>Synonyms - please provide a synonym scope and source/cross-reference</li>
+<li>Check OMIM for children classes (specific to new gene-related terms)</li>
+</ol>
+<h4 id="synonym-scopes">Synonym scopes:<a class="headerlink" href="#synonym-scopes" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Exact - an exact match</li>
+<li>Narrow - more specific term</li>
+<li>Broad - more general term</li>
+<li>Related - a word of phrase has been used synonymously with the primary term name in the literature, but the usage is not strictly correct </li>
+</ul>
+<h3 id="formatting">Formatting:<a class="headerlink" href="#formatting" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Preferred term labels should be lowercase (unless it is a proper name or abbreviation)</li>
+<li>Write the request below the prompts on the template so the Markdown formatting displays properly</li>
+<li>Synonyms should be lowercase (with exceptions above)</li>
+<li>Definition source - if from PubMed, please use the format PMID:XXXXXX (no space)</li>
+<li>Include the Mondo ID and label for the parent term</li>
+<li>List the children terms with Mondo ID and label in a bulleted list</li>
+</ol>
+<h3 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h3>
+<h3 id="tickets-that-followed-best-practices">Tickets that followed best practices:<a class="headerlink" href="#tickets-that-followed-best-practices" title="Permanent link">&para;</a></h3>
+<ul>
+<li>https://github.com/monarch-initiative/mondo/issues/2541</li>
+<li>https://github.com/monarch-initiative/mondo/issues/1719
+Note: while this ticket generally follows best practices, one thing that can be improved is defining the synonym scope. Generally, when the synonym scope is not explicity mentioned, it is assumed it is an <em>exact synonym</em>.</li>
+<li>https://github.com/monarch-initiative/mondo/issues/1188</li>
+<li>https://github.com/monarch-initiative/mondo/issues/2945</li>
+</ul>
+<h4 id="tickets-that-did-not-follow-best-practices">Tickets that did not follow best practices:<a class="headerlink" href="#tickets-that-did-not-follow-best-practices" title="Permanent link">&para;</a></h4>
+<ul>
+<li>https://github.com/monarch-initiative/mondo/issues/1837</li>
+<li>https://github.com/monarch-initiative/mondo/issues/276</li>
+</ul>
+<h3 id="submitting-other-issues-to-mondo">Submitting other issues to Mondo<a class="headerlink" href="#submitting-other-issues-to-mondo" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Users may want to request other types of changes to Mondo (or any other ontology) beyond just adding a new term.</li>
+<li>The Mondo curation team created many <a href="https://github.com/monarch-initiative/mondo/issues/new/choose">issue templates</a> for users, for specific types of requests.</li>
+<li>If none of the issue templates fit your issue, you can scroll to the bottom and click <a href="https://github.com/monarch-initiative/mondo/issues/new">Open a blank issue</a></li>
+</ul>
+<p><a name="iri"></a> </p>
+<h2 id="8differences-between-iris-curies-and-labels">8.Differences between IRIs, CURIEs, and labels<a class="headerlink" href="#8differences-between-iris-curies-and-labels" title="Permanent link">&para;</a></h2>
+<h4 id="uri">URI<a class="headerlink" href="#uri" title="Permanent link">&para;</a></h4>
+<p>A uniform resource identifier (URI) is a string of characters used to identify a name or a resource. </p>
+<h4 id="url">URL<a class="headerlink" href="#url" title="Permanent link">&para;</a></h4>
+<p>A URL is a URI that, in addition to identifying a network-homed resource, specifies the means of acting upon or obtaining the representation.</p>
+<p>A URL such as this one: </p>
+<p>https://github.com/obophenotype/uberon/blob/master/uberon_edit.obo</p>
+<p>has three main parts:
+1. Protocol, e.g. https
+2. Host, e.g. github.com
+3. Path, e.g. /obophenotype/uberon/blob/master/uberon_edit.obo</p>
+<p>The protocol tells you how to get the resource. Common protocols for web pages are http (HyperText Transfer Protocol) and https (HTTP Secure). 
+The host is the name of the server to contact (the where), which can be a numeric IP address, but is more often a domain name. 
+The path is the name of the resource on that server (the what), here the Uberon anatomy ontology file.</p>
+<h4 id="iri">IRI<a class="headerlink" href="#iri" title="Permanent link">&para;</a></h4>
+<p>A Internationalized Resource Identifiers (IRI) is an internet protocol standard that allows permitted characters from a wide range of scripts. While URIs are limited to a subset of the ASCII character set, IRIs may contain characters from the Universal Character Set (Unicode/ISO 10646), including Chinese or Japanese kanji, Korean, Cyrillic characters, and so forth. It is defined by <a href="https://datatracker.ietf.org/doc/html/rfc3987">RFC 3987</a>.</p>
+<p>More information is available <a href="https://www.w3.org/International/articles/idn-and-iri/">here</a>.</p>
+<h4 id="curies">CURIEs<a class="headerlink" href="#curies" title="Permanent link">&para;</a></h4>
+<p>A Compact URI (CURIE) consists of a prefix and a suffix, where the prefix stands in place of a longer base IRI. </p>
+<p>By converting the prefix and appending the suffix we get back to full IRI. For example, if we define the obo prefix to stand in place of the IRI as:
+http://purl.obolibrary.org/obo/, then the CURIE 
+obo:UBERON_0002280 
+can be expanded to 
+http://purl.obolibrary.org/obo/UBERON_0002280, which is the UBERON Anatomy term for ‘otolith’. 
+Any file that contains CURIEs need to 
+define the prefixes in the file header.</p>
+<h4 id="label">Label<a class="headerlink" href="#label" title="Permanent link">&para;</a></h4>
+<p>A label is the textual, human readable name that is given to a term, class property or instance in an ontology.  </p>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

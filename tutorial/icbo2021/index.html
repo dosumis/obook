@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>ICBO Tutorial 2021 - OBO Semantic Engineering Training</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "ICBO Tutorial 2021";
+    var mkdocs_page_input_path = "tutorial/icbo2021.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> OBO Semantic Engineering Training</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">About the course</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../getting_started/">Getting started with learning</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../contributing/">Contribe to the course</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="" href="../../cite.md">Table of contents</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Lessons</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../lesson/contributing_to_obo_ontologies/">Contributing to OBO ontologies</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../lesson/ontology_pipelines/">Ontology Pipelines with ROBOT</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">How-to guides</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../howto/installing_elk_in_protege/">Installing ELK in Protege</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../howto/odk_setup/">Setting up the ODK</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">OBO Semantic Engineering Training</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>ICBO Tutorial 2021</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="icbo-tutorial-2021">ICBO Tutorial 2021<a class="headerlink" href="#icbo-tutorial-2021" title="Permanent link">&para;</a></h1>
+<h2 id="goal">Goal<a class="headerlink" href="#goal" title="Permanent link">&para;</a></h2>
+<p>The goal of this tutorial is to provide a flavor of the OBO landscape, from the OBO Foundry organization to the ontology curators and OBO engineers that are doing the daily ontology development.</p>
+<h2 id="organizers">Organizers<a class="headerlink" href="#organizers" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="http://james.overton.ca/">James A. Overton</a>, Knocean Inc.</li>
+<li><a href="https://orcid.org/0000-0002-6601-2165">Chris Mungall</a>, Lawrence Berkeley National Laboratory</li>
+<li><a href="https://orcid.org/0000-0001-5208-3432">Nicole Vasilevsky</a>, University of Colorado Anschutz Medical Campus</li>
+<li><a href="https://orcid.org/0000-0002-7356-1779">Nico Matentzoglu</a>, semanticly Ltd</li>
+<li><a href="https://orcid.org/0000-0001-8957-7612">Randi Vita</a>, La Jolla Institute for Allergy &amp; Immunology</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Time CEST</th>
+<th>Presenter</th>
+<th>Topic</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4:00 - 4:10pm</td>
+<td>James Overton</td>
+<td>Workshop overview</td>
+</tr>
+<tr>
+<td>4:10 - 4:20pm</td>
+<td>James Overton</td>
+<td>OBO Foundry Overview</td>
+</tr>
+<tr>
+<td>4:20 - 4:30pm</td>
+<td>Nicole Vasilevsky</td>
+<td><a href="https://docs.google.com/presentation/d/1kW56zIaQztow0FXocxnPn0he4be-5Nk6/edit">Controlled Vocabularies and Ontologies</a></td>
+</tr>
+<tr>
+<td>4:30 - 4:50pm</td>
+<td>Nicole Vasilevsky</td>
+<td><a href="https://github.com/jamesaoverton/obook/blob/master/docs/lesson/ontology_term_use.md">Using and Reusing Ontology Terms</a></td>
+</tr>
+<tr>
+<td>4:50 - 5:25pm</td>
+<td>Nicole Vasilevsky</td>
+<td><a href="https://github.com/jamesaoverton/obook/blob/master/docs/tutorial/ontology-curator.md">A day in the life of an Ontology Curator</a></td>
+</tr>
+<tr>
+<td>5:25 - 5:30pm</td>
+<td></td>
+<td>Break</td>
+</tr>
+<tr>
+<td>5:30pm - 5:40pm</td>
+<td>Nico Matentzoglu</td>
+<td>Ontology 201 Overview</td>
+</tr>
+<tr>
+<td>5:40 - 6:15 pm</td>
+<td>James Overton</td>
+<td>ROBOT Tutorial</td>
+</tr>
+<tr>
+<td>6:15 - 6:35 pm</td>
+<td>Nico Matentzoglu</td>
+<td>ODK presentation</td>
+</tr>
+<tr>
+<td>6:35 - 6:55 pm</td>
+<td>Nico Matentzoglu</td>
+<td>A brief introduction into ontology QC using the OBO dashboard, ROBOT report and query</td>
+</tr>
+<tr>
+<td>6:55 - 7:00 pm</td>
+<td>Nico Matentzoglu</td>
+<td>Wrap up</td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

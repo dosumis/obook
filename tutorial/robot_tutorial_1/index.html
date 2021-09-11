@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>ROBOT Mini-Tutorial 1: Convert, Extract and Template - OBO Semantic Engineering Training</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "ROBOT Mini-Tutorial 1: Convert, Extract and Template";
+    var mkdocs_page_input_path = "tutorial/robot_tutorial_1.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> OBO Semantic Engineering Training</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">About the course</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../getting_started/">Getting started with learning</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../contributing/">Contribe to the course</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="" href="../../cite.md">Table of contents</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Lessons</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../lesson/contributing_to_obo_ontologies/">Contributing to OBO ontologies</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../lesson/ontology_pipelines/">Ontology Pipelines with ROBOT</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">How-to guides</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../howto/installing_elk_in_protege/">Installing ELK in Protege</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../howto/odk_setup/">Setting up the ODK</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">OBO Semantic Engineering Training</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>ROBOT Mini-Tutorial 1: Convert, Extract and Template</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="robot-mini-tutorial-1-convert-extract-and-template">ROBOT Mini-Tutorial 1: Convert, Extract and Template<a class="headerlink" href="#robot-mini-tutorial-1-convert-extract-and-template" title="Permanent link">&para;</a></h1>
+<p>Last week, we were introduced to ROBOT for quality control and generating reports about terms in an ontology. This week, we will learn about three new ROBOT commands:
+* Convert
+* Extract
+* Template</p>
+<p>Before starting this tutorial, either:
+* make sure Docker is running and you are in the container
+* <a href="http://robot.obolibrary.org/">download and install ROBOT</a> for your operating system</p>
+<p>We will be using the files from the <a href="https://github.com/OHSUBD2K/BDK14-Ontologies-101">Ontologies 101 Tutorial</a> that we started last week.
+In your terminal, navigate to the repository that you cloned and then into the <code>BDK14_exercises</code> folder.</p>
+<h2 id="convert">Convert<a class="headerlink" href="#convert" title="Permanent link">&para;</a></h2>
+<p>So far, we have been saving our ontologies in Protege using the default RDF/XML syntax, but there are many flavors of OWL.
+We will discuss each of these serializations in more detail during the class session, but ROBOT supports the following:</p>
+<ul>
+<li>owl - RDF/XML</li>
+<li>owx - OWL/XML</li>
+<li>ttl - Turtle</li>
+<li>obo - OBO Format</li>
+<li>ofn - OWL Functional</li>
+<li>omn - OWL Manchester</li>
+<li>json</li>
+</ul>
+<h3 id="lets-try-it">Let's Try It!<a class="headerlink" href="#lets-try-it" title="Permanent link">&para;</a></h3>
+<p>Navigate to the <code>basic-subclass/</code> folder. Open <code>chromosome-parts.owl</code> in your text editor and you will see it's in RDF/XML format.
+We're going to take this file and convert it to Turtle (<code>ttl</code>) serialization. Return to your terminal and enter the following command:</p>
+<pre><code>robot convert --input chromosome-parts.owl --format ttl --output chromosome-parts.ttl
+</code></pre>
+<p>ROBOT convert is smart about detecting formats, so since the output file ends with <code>.ttl</code>, the <code>--format ttl</code> parameter isn't really required.
+If you wanted to use a different file ending, say <code>.owl</code>, you will need to include the format flag to force ROBOT to write Turtle.</p>
+<p>Now open <code>chromosome-parts.ttl</code> in your text editor and see what's changed!
+RDF/XML and Turtle are very different serializations, but the actual data that is contained in these two files is exactly the same.</p>
+<h3 id="on-your-own">On Your Own<a class="headerlink" href="#on-your-own" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Convert <code>chromosome-parts.owl</code> into the following formats: <code>obo</code> (OBO Format), <code>ofn</code> (OWL Functional), and <code>omn</code> (OWL Manchester).</li>
+<li>Open each file and take a minute to scroll through (we don't expect you to be able to read these, they're <em>mostly</em> meant for computers!)</li>
+<li>Why do you think we need these different serializations? What do you think the purpose of OWL Manchester vs. RDF/XML is?</li>
+</ol>
+<hr />
+<h2 id="extract">Extract<a class="headerlink" href="#extract" title="Permanent link">&para;</a></h2>
+<p>Sometimes we only want to browse or share a subset of an ontology, especially with some of the larger OBO Foundry ontologies.
+There are two main methods for creating subsets:</p>
+<ul>
+<li>MIREOT</li>
+<li>SLME</li>
+</ul>
+<p>Right now, we will use use MIREOT and talk more about SLME in our class session.
+MIREOT makes sure that you have the <em>minimal</em> amount of information you need to reuse an existing ontology term.
+It allows us to extract a small portion of the class hierarchy by specifying upper and lower boundaries, which you will see in the example below.
+We need to know the identifiers (as CURIEs) of the terms that we want to set as our boundaries.</p>
+<h3 id="lets-try-it_1">Let's Try It!<a class="headerlink" href="#lets-try-it_1" title="Permanent link">&para;</a></h3>
+<p>Open <code>chromosome-parts.owl</code> in Protege and open the Class hierarchy. We are going to create a subset relevant to the term "chromosome".
+First, we will find the CURIE of our desired term. Search for "chromosome" and find the "id" annotation property. This will be our lower term.
+Right now, we won't set an upper boundary. That means this subset will go all the way up to the top-level ancestor of "chromosome".</p>
+<p>Return to your terminal and enter the following command (where the <code>--lower-term</code> is the CURIE that we just found):</p>
+<pre><code>robot extract --method MIREOT --input chromosome-parts.owl --lower-term GO:0005694 --output chromosome-full.owl
+</code></pre>
+<p>Now open <code>chromosome-full.owl</code> in Protege and open the Class hierarchy. When you open the "cellular_component" node, you'll notice that most of the terms are gone!
+Both "organelle" and "intracellular part" remain because they are in the path between "chromosome" and the top-level "cellular_component".
+Keep clicking down and you'll find "chromosome" at the very bottom.
+Since "chromosome" has two named parents, both of those parents are included, which is why we ended up with "organelle" and "intracellular part".</p>
+<p>Now let's try it with an upper term. This time, we want "organelle" to be the upper boundary. Find the CURIE for "organelle".</p>
+<p>Return to your terminal and enter the following command (where the <code>--upper-term</code> is the new CURIE we just found):</p>
+<pre><code>robot extract --method MIREOT \
+  --input chromosome-parts.owl \
+  --lower-term GO:0005694 \
+  --upper-term GO:0043226 \
+  --output chromosome.owl
+</code></pre>
+<p>Open <code>chromosome.owl</code> and again return to the Class hierarchy. This time, we see "organelle" directly below <code>owl:Thing</code>.
+"intracellular part" is also now missing because it does not fall under "organelle".</p>
+<h3 id="on-your-own_1">On Your Own<a class="headerlink" href="#on-your-own_1" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Play with different upper- and lower-level terms to create different subsets</li>
+<li>Compare the terms that are in the subsets to the terms in the original <code>chromosome-parts.owl</code> file.</li>
+<li>What is missing from the terms in the subsets? What has been included as our "minimal" information?</li>
+</ol>
+<hr />
+<h2 id="template">Template<a class="headerlink" href="#template" title="Permanent link">&para;</a></h2>
+<p>Most of the knowledge encapsulated in ontologies comes from domain experts.
+Often, these domain experts are not computer scientists and are not familiar with the command line.
+Luckily, most domain experts <em>are</em> familiar with spreadsheets!</p>
+<p>ROBOT provides a way to convert spreadsheets into OWL ontologies using <em>template strings</em>. We'll get more into these during the class session, but if you want to get a head start, they are all <a href="http://robot.obolibrary.org/template#template-strings">documented here</a>.
+Essentially, the first row of a ROBOT template is a human-readable header. The second row is the ROBOT template string.
+Each row below that represents an entity to be created in the output ontology. We can create new entities by giving them new IDs, but we can also reference existing entities just by label.
+For now, we're going to create a new, small ontology with new terms using a template.</p>
+<h3 id="lets-try-it_2">Let's Try It!<a class="headerlink" href="#lets-try-it_2" title="Permanent link">&para;</a></h3>
+<p>Download (or copy/paste) the <a href="https://github.com/jamesaoverton/obook/blob/master/06-OntologyDesign/animals.tsv">animals.tsv</a> file and move it to the <code>basic-subclass/</code> folder (or whatever folder you would like to work in; we will not be using any of the Ontology 101 files anymore).
+This contains the following data:</p>
+<table>
+<thead>
+<tr>
+<th>CURIE</th>
+<th>Label</th>
+<th>Parent</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID</td>
+<td>LABEL</td>
+<td>SC %</td>
+<td>A rdfs:comment</td>
+</tr>
+<tr>
+<td>obo:0000001</td>
+<td>animal</td>
+<td></td>
+<td>Any animal in the world.</td>
+</tr>
+<tr>
+<td>obo:0000002</td>
+<td>canine</td>
+<td>animal</td>
+<td>A member of the genus Canis.</td>
+</tr>
+<tr>
+<td>obo:0000003</td>
+<td>feline</td>
+<td>animal</td>
+<td>A member of the genus Felis.</td>
+</tr>
+</tbody>
+</table>
+<p>In the first column, we use the special <code>ID</code> keyword to say that this is our term's unique identifier.
+The second column contains the <code>LABEL</code> keyword which is a shortcut for the <code>rdfs:label</code> annotation property.
+The third column uses the <code>SC</code> keyword to state that this column will be a subclass statement. The <code>%</code> sign is replaced by the value in the cell.
+We'll talk more about this keyword and the <code>%</code> symbol during the class session.
+Finally, the last column begins with <code>A</code> to denote that this will be an annotation, and then is followed by the annotation property we're using.</p>
+<p>Just looking at the template, you can begin to predict what a class hierarchy using these terms would look like in an ontology. We can turn this into reality!</p>
+<p>In your terminal, enter the following command:</p>
+<pre><code>robot template --template animals.tsv --output animals.owl
+</code></pre>
+<p>Note that in this command, we don't use the <code>--input</code> parameter. That parameter is reserved for input ontologies, and we are not using one right now. More on this later.</p>
+<p>Open <code>animals.owl</code> in Protege, and you'll be able to see the class hierarchy we defined in the template as an actual structure.</p>
+<p>Now let's make another small ontology that reuses some terms from our <code>animals.owl</code> file. Download (or copy/paste) <a href=""><code>animals2.tsv</code></a> into the same folder.
+This contains the following:</p>
+<table>
+<thead>
+<tr>
+<th>CURIE</th>
+<th>Label</th>
+<th>Parent</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID</td>
+<td>LABEL</td>
+<td>SC %</td>
+<td>A rdfs:comment</td>
+</tr>
+<tr>
+<td>obo:0000004</td>
+<td>dog</td>
+<td>canine</td>
+<td>A member of the subspecies Canis lupus familiaris.</td>
+</tr>
+<tr>
+<td>obo:0000005</td>
+<td>cat</td>
+<td>feline</td>
+<td>A member of the species Felis catus.</td>
+</tr>
+</tbody>
+</table>
+<p>You'll notice that we are referencing two terms from our other spreadsheet in this one.</p>
+<p>In your terminal, enter the following command:</p>
+<pre><code>robot template --input animals.owl --template animals2.tsv --output animals2.owl
+</code></pre>
+<p>This time, we did use the <code>--input</code> parameter and provided the animals ontology we just created.
+This allows us to use any term in the <code>animals.owl</code> file in our <code>animals2.tsv</code> template and ROBOT will know what we're talking about.</p>
+<p>Go ahead and open <code>animals2.owl</code> in Protege. What's missing? The parent classes for "dog" and "cat" don't have labels, and the "animal" term is missing entirely.
+This is because, even though ROBOT knew about these classes, we didn't ask for the original ontology to be included in the output, so no axioms from that ontology can be found in this newly-created one.
+Next week, we'll learn about combining ontologies with the <strong>Merge</strong> command.</p>
+<p>For now, let's add the original <code>animals.owl</code> file as an import:
+1. Go to the "Active ontology" tab and find the "Imported ontologies" section at the bottom
+2. Click the <strong>+</strong> next to "Direct imports"
+3. Select "Import an ontology contained in a local file" and click Continue
+4. Browse for the path to <code>animals.owl</code>, click Continue, and then click Finish</p>
+<p>Protégé will now load <code>animals.owl</code> as an import. When you return to the Entities tab, you'll see all those upper-level terms. Note the difference in how the terms are displayed in the class hierarchy.</p>
+<h3 id="on-your-own_2">On Your Own<a class="headerlink" href="#on-your-own_2" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Try adding another class or two to the <code>animals.tsv</code> template and regenerating <code>animals.owl</code>.</li>
+<li>Can you create your own template?</li>
+</ol>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

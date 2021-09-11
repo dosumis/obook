@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Contributing to OBO ontologies - OBO Semantic Engineering Training</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Contributing to OBO ontologies";
+    var mkdocs_page_input_path = "lesson/contributing_to_obo_ontologies.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> OBO Semantic Engineering Training</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">About the course</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../getting_started/">Getting started with learning</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../contributing/">Contribe to the course</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="" href="../../cite.md">Table of contents</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Lessons</span></p>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Contributing to OBO ontologies</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#prerequisites">Prerequisites</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#preparation">Preparation</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#what-is-delivered-as-part-of-the-course">What is delivered as part of the course</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#learning-objectives">Learning objectives</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#tutorials">Tutorials</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#additional-materials-and-resources">Additional materials and resources</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#contributors">Contributors</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#use-github">Use GitHub</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#github-workflows">GitHub workflows</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#branch-vs-fork">Branch vs Fork</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#create-github-issues">Create GitHub Issues</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#basic-open-source-etiquette">Basic Open Source etiquette</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#reading-readmes">Reading READMEs</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#basics-of-ontology-development-workflows">Basics of ontology development workflows</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#ontology-development-workflows">Ontology development workflows</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#clone-the-mondo-repo">Clone the Mondo repo</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#create-a-branch-using-github-desktop">Create a branch using GitHub Desktop</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#open-the-ontology-edit-file-in-protege">Open the Ontology edit file in Protege</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#browsing-and-searching-in-protege">Browsing and Searching in Protege</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#open-the-mondo-in-protege">Open the Mondo in Protégé</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#the-protege-ui">The Protégé UI</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#running-the-reasoner">Running the reasoner</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#entities-tab">Entities tab</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#searching-in-protege">Searching in Protege</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#use-github-make-pull-requests">Use GitHub: make pull requests</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#committing-pushing-and-making-pull-requests">Committing, pushing and making pull requests</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#add-new-terms-to-an-ontology">Add New Terms to an Ontology:</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#setup">Setup</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#setting-preferences-for-new-entities">Setting Preferences for New entities</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#setting-preferences-for-user-details">Setting Preferences for User details</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#setting-preferences-for-new-entities-metadata">Setting Preferences for New entities metadata</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#protege-editing">Protege editing</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#creating-a-new-class">Creating a new class</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#httpsgithubcommonarch-initiativemondoissues616">https://github.com/monarch-initiative/mondo/issues/616</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#adding-annotations">Adding annotations</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#add-synonyms-and-database-cross-reference">Add Synonyms and Database cross reference</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#the-class-description-view">The Class description view</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#revising-a-superclass">Revising a superclass:</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#make-a-pull-request">Make a Pull Request</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#ontology-design-patterns">Ontology design patterns</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#use-templates-robot-dosdp">Use templates: ROBOT, DOSDP</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#basics-of-owl">Basics of OWL</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#logic-and-debugging">Logic and debugging</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#practice-adding-logic-and-debugging">Practice adding logic and debugging</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#practice-part-1">Practice (Part 1)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#add-new-terms-with-an-equivalance-axiom-to-mondo">Add New Terms with an Equivalance Axiom to Mondo:</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#practice-adding-a-new-term">Practice adding a new term:</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#practice-part-2">Practice (Part 2)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#add-a-new-term-with-an-equivalance-axiom-to-mondo">Add a New Term with an Equivalance Axiom to Mondo:</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#add-annotations-and-logical-definition-equivalence-axiom-to-mondo0004549-cork-handlers-disease">Add annotations and logical definition (equivalence axiom) to MONDO:0004549 'cork-handlers' disease'</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#add-annotations-and-logical-definition-equivalence-axiom-to">Add annotations and logical definition (equivalence axiom) to</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#great-further-reading">Great further reading</a>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../ontology_pipelines/">Ontology Pipelines with ROBOT</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">How-to guides</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../howto/installing_elk_in_protege/">Installing ELK in Protege</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../howto/odk_setup/">Setting up the ODK</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">OBO Semantic Engineering Training</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Lessons &raquo;</li>
+        
+      
+    
+    <li>Contributing to OBO ontologies</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="contributing-to-obo-ontologies">Contributing to OBO ontologies<a class="headerlink" href="#contributing-to-obo-ontologies" title="Permanent link">&para;</a></h1>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<p>Participants will need to have access to the following resources and tools prior to the training:
+- <strong>GitHub account</strong> - register for a free GitHub account <a href="https://github.com/join?ref_cta=Sign+up&amp;ref_loc=header+logged+out&amp;ref_page=%2F&amp;source=header-home">here</a>
+- <strong>Protege</strong> - Install Protege 5.5, download it <a href="https://protege.stanford.edu/">here</a>
+- <strong><a href="https://github.com/jamesaoverton/obook/blob/master/docs/howto/install_elk_0.5_protege.md">Install ELK 0.5</a></strong> 
+- <strong>Install GitHub Desktop</strong> Please make sure you have some kind of git client installed on your machine. If you are new to Git, please install <a href="https://desktop.github.com/">GitHub Desktop</a></p>
+<h2 id="preparation">Preparation<a class="headerlink" href="#preparation" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Review tutorial on <a href="../ontology_term_use/">Ontology Term Use</a></li>
+</ul>
+<h2 id="what-is-delivered-as-part-of-the-course">What is delivered as part of the course<a class="headerlink" href="#what-is-delivered-as-part-of-the-course" title="Permanent link">&para;</a></h2>
+<p><strong>Description:</strong> How to contribute terms to existing ontologies.</p>
+<h3 id="learning-objectives">Learning objectives<a class="headerlink" href="#learning-objectives" title="Permanent link">&para;</a></h3>
+<ul>
+<li>How to use GitHub</li>
+<li><a href="#gh-workflows">GitHub workflows</a></li>
+<li><a href="#branch">Branch vs Fork</a></li>
+<li><a href="#issues">How to create GitHub Issues</a></li>
+<li><a href="#etiquette">Understand basic Open Source etiquette</a></li>
+<li><a href="readme">Reading READMEs</a></li>
+<li><a href="workflow">Understand basics of ontology development workflows</a></li>
+<li><a href="#browsing">Browsing and Searching in Protege</a></li>
+<li><a href="#add">Add new terms to an ontology</a><ul>
+<li><a href="#setup">Initial Protege setup</a></li>
+<li><a href="#editing">Protege editing</a></li>
+<li><a href="#class-description">The Class description view</a></li>
+</ul>
+</li>
+<li><a href="#pr">Use GitHub: make pull requests</a></li>
+<li><a href="#pattern">Understand ontology design patterns</a></li>
+<li><a href="template">Use templates: ROBOT, DOSDP</a> (<em>under development</em>)</li>
+<li><a href="owl">Basics of OWL</a></li>
+<li><a href="#logic">Logic and debugging</a></li>
+</ul>
+<h2 id="tutorials">Tutorials<a class="headerlink" href="#tutorials" title="Permanent link">&para;</a></h2>
+<ul>
+<li>N/A</li>
+</ul>
+<h2 id="additional-materials-and-resources">Additional materials and resources<a class="headerlink" href="#additional-materials-and-resources" title="Permanent link">&para;</a></h2>
+<h2 id="contributors">Contributors<a class="headerlink" href="#contributors" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://orcid.org/0000-0001-5208-3432">Nicole Vasilevsky</a></li>
+<li><a href="https://orcid.org/0000-0003-4871-5569">Rebecca Jackson</a></li>
+<li><a href="https://orcid.org/0000-0001-9114-8737">Melissa Haendel</a></li>
+<li><a href="https://orcid.org/0000-0002-6601-2165">Chris Mungall</a></li>
+<li><a href="https://orcid.org/0000-0002-7073-9172">David Osumi-Sutherland</a></li>
+<li>Matt Yoder</li>
+<li><a href="https://orcid.org/0000-0002-3734-1859">Carlo Torniai</a></li>
+<li><a href="https://orcid.org/0000-0002-0643-3144">Simon Jupp</a></li>
+</ul>
+<h2 id="use-github">Use GitHub<a class="headerlink" href="#use-github" title="Permanent link">&para;</a></h2>
+<p><a name="gh-workflows"></a> </p>
+<h3 id="github-workflows">GitHub workflows<a class="headerlink" href="#github-workflows" title="Permanent link">&para;</a></h3>
+<p>GitHub - distributed version control (Git) + social media for geeks who like to build code/documented collaboratively.</p>
+<p>A Git repo consists of a set of branches each with a complete history of all changes ever made to the files and directories. This is true for a local copy you check out to your computer from GitHub or for a copy (fork) you make on GitHub.</p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/6722114/115820759-59267500-a3b6-11eb-8452-b44404ce7aa7.png" /></p>
+<p>A Git repo typically has a master or main branch that is not directly editing.  Changes are made by creating a branch from Master (complete copy of the Master + its history).  </p>
+<p><a name="branch"></a> </p>
+<h3 id="branch-vs-fork">Branch vs Fork<a class="headerlink" href="#branch-vs-fork" title="Permanent link">&para;</a></h3>
+<p>You can copy (fork) any GitHub repo to some other location on GitHub without having to ask permission from the owners.  If you modify some files in that repo, e.g. to fix a bug in some code, or a typo in a document, you can then suggest to the owners (via a Pull Request) that they adopt (merge) you your changes back into their repo.</p>
+<p>If you have permission from the owners, you can instead make a new branch. For this training, we gave you access to the repository. See the <a href="https://github.com/jamesaoverton/obook/blob/master/04-OntologyTheory/appendix.md">Appendix</a> for instructions on how to make a fork.</p>
+<p><a name="issues"></a> </p>
+<h3 id="create-github-issues">Create GitHub Issues<a class="headerlink" href="#create-github-issues" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Go to GitHub tracker for the ontology where you'd like to create an issue</li>
+<li>Select New issue</li>
+<li>Pick appropriate template (if applicable)</li>
+<li>Fill in the information that is requested on the template below each header</li>
+<li>For a new term request, please include:<ol>
+<li>A definition in the proper format</li>
+<li>Sources/cross references for synonyms</li>
+<li>Your ORCID</li>
+<li>Add any additional comments at the end</li>
+</ol>
+</li>
+<li>If you use a template, an ontology curator may automatically be assigned.</li>
+</ol>
+<p>See <a href="https://drive.google.com/file/d/14g9y1nmCmRTkPB1fa6y_jIW3lHyFV4-g/view?resourcekey">this example video</a>: creating a new term request to the Mondo Disease Ontology</p>
+<p><a name="etiquette"></a> </p>
+<h2 id="basic-open-source-etiquette">Basic Open Source etiquette<a class="headerlink" href="#basic-open-source-etiquette" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Keep in mind that open source ontology repositories on GitHub are public and open to all. </li>
+<li>Be respectful in your requests and comments.</li>
+<li>Do not include any private information.</li>
+<li>GitHub sends notifications to your email, and you can respond via your email client. Keep in mind, the responses are posted publicly. Be sure to delete your email signature that includes any personal information, like your email address or phone number.</li>
+<li>Many ontologies have limited resources and personnel for development and maintenance. Please be patient with your requests.</li>
+<li>If your ticket/request has been unanswered for a long period of time, feel free to kindly check in by commenting on the ticket. </li>
+<li>Including a deadline or priority on the ticket can help the ontology curators with triaging tickets. </li>
+</ul>
+<p><a name="readme"></a> </p>
+<h2 id="reading-readmes">Reading READMEs<a class="headerlink" href="#reading-readmes" title="Permanent link">&para;</a></h2>
+<p>A README is a text file that introduces and explains a project. It is intended for <em>everyone</em>, not just the software or ontology developers. Ideally, the README file will include detailed information about the ontology, how to get started with using any of the files, license information and other details. The README is usually on the front page of the GitHub repository.</p>
+<p><a name="workflow"></a> </p>
+<h2 id="basics-of-ontology-development-workflows">Basics of ontology development workflows<a class="headerlink" href="#basics-of-ontology-development-workflows" title="Permanent link">&para;</a></h2>
+<h3 id="ontology-development-workflows">Ontology development workflows<a class="headerlink" href="#ontology-development-workflows" title="Permanent link">&para;</a></h3>
+<p>The steps below describe how to make changes to an ontology.</p>
+<ol>
+<li>Go to the GitHub repository for your ontology, and clone the repository. The example below describes how to clone the Mondo Disease Ontology repo, but this can be applied to any ontology that is stored in GitHub.</li>
+</ol>
+<h4 id="clone-the-mondo-repo">Clone the Mondo repo<a class="headerlink" href="#clone-the-mondo-repo" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Open the <a href="https://github.com/monarch-initiative/mondo">Mondo GitHub repository</a></li>
+<li>Click Code</li>
+</ol>
+<p><img alt="image" src="https://user-images.githubusercontent.com/6722114/116610830-801b0480-a8ea-11eb-8567-9da0c1159954.png" /></p>
+<ol>
+<li>Click 'Open with GitHub Desktop'</li>
+</ol>
+<p><img alt="image" src="https://user-images.githubusercontent.com/6722114/115820985-c3d7b080-a3b6-11eb-8131-7b9c33cc294d.png" /></p>
+<ol>
+<li>You will be given an option as to where to save the repository. I have a folder called 'git' where I save all of my local repos.</li>
+<li>This will open GitHub Desktop and the repo should start downloading. This could take some time depending on how big the file is and how much memory your computer has.</li>
+</ol>
+<h4 id="create-a-branch-using-github-desktop">Create a branch using GitHub Desktop<a class="headerlink" href="#create-a-branch-using-github-desktop" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Click the little arrow in Current Branch</li>
+<li>Click New Branch</li>
+<li>Give your branch a name: training-initials (ie <code>training-NV</code>)</li>
+</ol>
+<p><img alt="image" src="https://user-images.githubusercontent.com/6722114/115821352-7ad42c00-a3b7-11eb-97e0-b02611eb77e6.png" /></p>
+<h4 id="open-the-ontology-edit-file-in-protege">Open the Ontology edit file in Protege<a class="headerlink" href="#open-the-ontology-edit-file-in-protege" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Open Protege</li>
+<li>Go to: File -&gt; Open</li>
+<li>Navigate to [ontology-name]/src/ontology/[ontology-name]-edit.obo and open this file in Protege. For example: mondo/src/ontology/mondo-edit.obo </li>
+<li><em>Note: all ontologies that use the <a href="https://github.com/INCATools/ontology-development-kit">Ontology Development Kit (ODK)</a> will have the 'edit' files stored in the same folder path: src/ontology/[ontology-name]-edit.owl (or [ontology-name]-edit.obo)</em></li>
+</ol>
+<p><a name="browsing"></a> </p>
+<h3 id="browsing-and-searching-in-protege">Browsing and Searching in Protege<a class="headerlink" href="#browsing-and-searching-in-protege" title="Permanent link">&para;</a></h3>
+<p>The instructions below are using the Mondo Disease Ontology as an example, but this can be applied to any ontology.</p>
+<h4 id="open-the-mondo-in-protege">Open the Mondo in Protégé<a class="headerlink" href="#open-the-mondo-in-protege" title="Permanent link">&para;</a></h4>
+<p><em>Note: Windows users should open Protege using run.bat</em></p>
+<ol>
+<li>Navigate to where you downloaded the repository and open the mondo-edit.obo file (src/ontology/mondo-edit.obo)</li>
+<li>When you open Protege, you will be on the Active Ontology tab</li>
+<li>Note the Ontology IRI field. The IRI is used to identify the ontology on the Web.</li>
+</ol>
+<p><img alt="image" src="https://user-images.githubusercontent.com/6722114/115821407-9b03eb00-a3b7-11eb-8dd2-7eb0eb9593eb.png" /></p>
+<h4 id="the-protege-ui">The Protégé UI<a class="headerlink" href="#the-protege-ui" title="Permanent link">&para;</a></h4>
+<p>The Protégé interface follows a basic paradigm of Tabs and Panels. By default, Protégé launches with the main tabs seen below. The layout of tabs and panels is configurable by the user. The Tab list will have slight differences from version to version, and depending on your configuration. It will also reflect your customizations.</p>
+<p>To customize your view, go to the Window tab on the toolbar and select Views. Here you can customize which panels you see in each tab. In the tabs view, you can select which tabs you will see. You will commonly want to see the Entities tab, which has the Classes tab and the Object Properties tab.</p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/6722114/115821442-a9520700-a3b7-11eb-9710-cc85471f133b.png" /></p>
+<p>Note: if you open a new ontology while viewing your current ontology, Protégé will ask you if you'd like to open it in a new window.  <strong><em>For most normal usage you should answer no.</em></strong> This will open in a new window.</p>
+<p>The panel in the center is the ontology annotations panel. This panel contains basic metadata about the ontology, such as the authors, a short description and license information.</p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/6722114/115821747-34cb9800-a3b8-11eb-9ec4-302ed3fcd222.png" /></p>
+<h4 id="running-the-reasoner">Running the reasoner<a class="headerlink" href="#running-the-reasoner" title="Permanent link">&para;</a></h4>
+<p>Before browsing  or searching an ontology, it is useful to run an OWL reasoner first.  This ensures that you can view the full, intended classification and allows you to run queries.  Navigate to the query menu, and run the ELK reasoner:</p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/6722114/115822558-9b04ea80-a3b9-11eb-922b-c4c908fd99cc.png" /></p>
+<h4 id="entities-tab">Entities tab<a class="headerlink" href="#entities-tab" title="Permanent link">&para;</a></h4>
+<p>You will see various tabs along the top of the screen. Each tab provides a different perspective on the ontology. 
+For the purposes of this tutorial, we care mostly about the Entities tab, the DL query tab and the search tool.  OWL Entities include Classes (which we are focussed on editing in this tutorial), relations (OWL Object Properties) and Annotation Properties (terms like, 'definition' and 'label' which we use to annotate OWL entities.
+Select the Entities tab and then the Classes sub-tab.  Now choose the inferred view (as shown below).</p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/6722114/115822595-a9530680-a3b9-11eb-8797-b60964733067.png" /></p>
+<p>The Entities tab is split into two halves. The left-hand side provides a suite of panels for selecting various entities in your ontology. When a particular entity is selected the panels on the right-hand side display information about that entity. The entities panel is context specific, so if you have a class selected (like Thing) then the panels on the right are aimed at editing classes. The panels on the right are customizable. Based on prior use you may see new panes or alternate arrangements.
+You should see the class OWL:Thing.  You could start browsing from here, but the upper level view of the ontology is too abstract for our purposes. To find something more interesting to look at we need to search or query.</p>
+<h4 id="searching-in-protege">Searching in Protege<a class="headerlink" href="#searching-in-protege" title="Permanent link">&para;</a></h4>
+<p>You can search for any entity using the search bar on the right:</p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/6722114/115822673-c8ea2f00-a3b9-11eb-9dca-dfe3d3bfe72a.png" /></p>
+<p>The search window will open on top of your Protege pane, we recommend resizing it and moving it to the side of the main window so you can view together.  </p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/6722114/115822725-dacbd200-a3b9-11eb-96de-5b727f931a71.png" /></p>
+<p>Here's an example search for 'COVID-19':
+<img alt="image" src="https://user-images.githubusercontent.com/6722114/115822742-e28b7680-a3b9-11eb-8d28-1046833b2f4d.png" /></p>
+<p>It shows results found in display names, definitions, synonyms and more.  The default results list is truncated.  To see full results check the 'Show all results option'. You may need to resize the box to show all results.
+Double clicking on a result, displays details about it in the entities tab, e.g. </p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/6722114/115822767-f040fc00-a3b9-11eb-8f90-5b1cc9a8775f.png" /></p>
+<p>In the Entities, tab, you can browse related types, opening/closing branches and clicking on terms to see details on the right. In the default layout, annotations on a term are displayed in the top panel and logical assertions in the 'Description' panel at the bottom.</p>
+<p>Try to find these specific classes:
+- 'congenital heart disease'
+- 'Kindler syndrome'
+- 'kidney failure'</p>
+<p>Note - a cool feature in the search tool in Protege is you can search on partial string matching. For example, if you want to search for ‘down syndrome’, you could search on a partial string: ‘do synd’. </p>
+<ul>
+<li>Try searching for ‘br car and see what kind of results are returned.</li>
+<li><strong>Question:</strong> The search will also search on synonyms. Try searching for ‘shingles’ and see what results are returned. Were you able to find the term?</li>
+</ul>
+<p><strong>Note</strong> - if the search is slow, you can uncheck the box ‘Search in annotation values. Try this and search for a term and note if the search is faster. Then search for ‘shingles’ again and note what results you get.</p>
+<p><a name="pr"></a> </p>
+<h2 id="use-github-make-pull-requests">Use GitHub: make pull requests<a class="headerlink" href="#use-github-make-pull-requests" title="Permanent link">&para;</a></h2>
+<h3 id="committing-pushing-and-making-pull-requests">Committing, pushing and making pull requests<a class="headerlink" href="#committing-pushing-and-making-pull-requests" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>Changes made to the ontology can be viewed in GitHub Desktop.</p>
+</li>
+<li>
+<p>Before committing, check the diff. Examples of a diff are pasted below. Large diffs are a sign that something went wrong. In this case, do not commit the changes and ask the ontology editors for help instead.</p>
+</li>
+</ol>
+<p>Example 1:</p>
+<p><img alt="" src="https://lh4.googleusercontent.com/dBtjnSflSSf85x1wO8lNFhqbjy4hx-ubSQe7UuGl7AimU5JqIWxez0TZIffqoI0j0Uey-ucWMJSp8EEu6AfGE5XOsGsh07K1H2gBzmbY1xoNFXlTfxoO13yC7zczajOZjPuDroEv" /></p>
+<ol>
+<li>Commit: Add a meaningful message in the Commit field in the lower left, for example: add new class MONDO:0001012 episodic angioedema with eosinophilia</li>
+</ol>
+<p>NOTE: You can use the word 'fixes' or 'closes' in the description of the commit message, followed by the corresponding ticket number (in the format #1234) - these are magic words in GitHub; when used in combination with the ticket number, it will automatically close the ticket. Learn more on this GitHub Help Documentation page about <a href="https://help.github.com/en/articles/closing-issues-using-keywords">Closing issues via commit messages</a>.</p>
+<ol>
+<li>
+<p>Note: 'Fixes' and "Closes' are case-insensitive.</p>
+</li>
+<li>
+<p>If you don't want to close the ticket, just refer to the ticket # without the word 'Fixes' or use 'Adresses'. The commit will be associated with the correct ticket but the ticket will remain open. NOTE: It is also possible to type a longer message than allowed when using the '-m' argument; to do this, skip the -m, and a vi window (on mac) will open in which an unlimited description may be typed.</p>
+</li>
+<li>
+<p>Click Commit to [branch]. This will save the changes to the cl-edit.owl file. </p>
+</li>
+<li>
+<p>Push: To incorporate the changes into the remote repository, click Publish branch.</p>
+</li>
+</ol>
+<p><a name="add"></a> </p>
+<h2 id="add-new-terms-to-an-ontology">Add New Terms to an Ontology:<a class="headerlink" href="#add-new-terms-to-an-ontology" title="Permanent link">&para;</a></h2>
+<p>The instructions below are using the Mondo Disease Ontology as an example, but this can be applied to any ontology. </p>
+<p><a name="setup"></a> </p>
+<h3 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h3>
+<h4 id="setting-preferences-for-new-entities">Setting Preferences for New entities<a class="headerlink" href="#setting-preferences-for-new-entities" title="Permanent link">&para;</a></h4>
+<p>Ontology terms have separate names and IDs. The names are annotation values (labels) and the IDs are represented using IRIs. The OBO foundry has a policy on IRI (or ID) generation (<a href="http://www.obofoundry.org/principles/fp-003-uris.html">http://www.obofoundry.org/principles/fp-003-uris.html</a>). You can set an ID strategy using the "New Entities" tab under the Protégé Preferences -- on the top toolbar, click the "Protégé dropdown, then click Preferences.</p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/6722114/115822913-3302d400-a3ba-11eb-89eb-70c767701843.png" /></p>
+<p>Set your new entity preferences precisely as in the following screenshot of the New Entities tab.  </p>
+<p><strong>Note</strong> -  you have been assigned an ID range in the Mondo <a href="https://github.com/monarch-initiative/mondo/blob/master/src/ontology/mondo-idranges.owl">idranges file</a>  - you should be able to find your own range assigned there.</p>
+<p><strong><em>DIY (only if you know what you are doing!)</em></strong></p>
+<p>To add your own ID ranges:</p>
+<p>Go into src/ontology </p>
+<p>create a branch</p>
+<p>Find and edit mondo-idranges.owl by adding the following: </p>
+<pre><code>Datatype: idrange:10 #update this to next following integer from previous
+
+    Annotations: 
+        allocatedto: "Your Name" #change to your name
+
+    EquivalentTo: 
+    xsd:integer[&gt;= 0806000 , &lt;= 0806999]. #add a range of 999 above the previous integer
+</code></pre>
+<p>create a pull request and add matentzn or nicolevasilevsky as a reviewer</p>
+<p>proceed to settting up as below:</p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/6722114/115964257-6a67a280-a4d8-11eb-8dcd-768b51d75720.png" /></p>
+<p>Specified IRI: http://purl.obolibrary.org/obo/</p>
+<p>Note - if you edit more than one ontology in Protege, you will need to update your Preferences for each ontology before you edit.</p>
+<h4 id="setting-preferences-for-user-details">Setting Preferences for User details<a class="headerlink" href="#setting-preferences-for-user-details" title="Permanent link">&para;</a></h4>
+<p>User name: click Use supplied user name and enter your username in the field below</p>
+<p>Click Use Git user name when available</p>
+<p>In the ORCID field, add your ORCID ID (in the format 0000-0000-0000-0000)</p>
+<p><img alt="" src="https://lh5.googleusercontent.com/zSBnZv_ki8Y_5Kll4mNKCpTOoS030-UGVww8D5E3-TyDKUTnVvYaNsHIGezIsHWM3LQLah5R5SFwdgAY8wppqRcORtwdGQfuO3Y7Up9QT7TSPZU938rcz3UujRijm6ejwGwuFKNw" /></p>
+<h4 id="setting-preferences-for-new-entities-metadata">Setting Preferences for New entities metadata<a class="headerlink" href="#setting-preferences-for-new-entities-metadata" title="Permanent link">&para;</a></h4>
+<p>You can have Protege add a 'created by' annotation with your ORCID or GitHub username for every new term that you create.</p>
+<p>Set your preferences to match the screenshot below, in the New entities metadata tab (under preferences).</p>
+<p>If you do not have an ORCID, register for for free here: <a href="https://orcid.org/">https://orcid.org/</a> </p>
+<p><img alt="" src="https://lh3.googleusercontent.com/L8OnTKLNmYsTLZn6fHVdONVFe_cA-OhRLr5iO-MHld_zePvnA0ECImFKDXoqOeP0vKSHKRE8-LQYoqz5lbk9st8paCbmA74UPMb1LHmrpMuXsXbY_ZmYAsN6L8zNRCfbBHPKvv5A" /></p>
+<p><a name="editing"></a> </p>
+<h3 id="protege-editing">Protege editing<a class="headerlink" href="#protege-editing" title="Permanent link">&para;</a></h3>
+<h4 id="creating-a-new-class">Creating a new class<a class="headerlink" href="#creating-a-new-class" title="Permanent link">&para;</a></h4>
+<p>Before you start:</p>
+<ul>
+<li>
+<p>make sure you are working on a branch - see quick guide <a href="https://docs.google.com/presentation/d/1M8NZQOIQVswng-so6ROxVeMJfDnzth7BYNj_5MXxEik/edit#slide=id.g9db6baf776_1_0">here</a>.</p>
+</li>
+<li>
+<p>make sure you have the editor's file open in Protege as detailed <a href="https://github.com/jamesaoverton/obook/blob/master/04-OntologyTheory/SearchingMondo.md">here</a>.</p>
+</li>
+</ul>
+<p>New classes are created in the Class hierarchy panel on the left.</p>
+<p>There are three buttons at the top of the class hierarchy view. These allow you to add a subclass (L-shaped icon), add a sibling class (c-shaped icon), or delete a selected class (x'd circle).</p>
+<p>Practice adding a new term:</p>
+<p>We will work on these two tickets:
+1.  <a href="https://github.com/monarch-initiative/mondo/issues/616">https://github.com/monarch-initiative/mondo/issues/616</a>
+2.  <a href="https://github.com/monarch-initiative/mondo/issues/2541">https://github.com/monarch-initiative/mondo/issues/2541</a> </p>
+<h4 id="httpsgithubcommonarch-initiativemondoissues616">https://github.com/monarch-initiative/mondo/issues/616<a class="headerlink" href="#httpsgithubcommonarch-initiativemondoissues616" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>Search for the parent term 'hypereosinophilic syndrome' (see <a href="https://github.com/jamesaoverton/obook/blob/master/04-OntologyTheory/SearchingMondo.md">search guide</a> if you are unsure how to do this).</p>
+</li>
+<li>
+<p>When you are clicked on the term in the Class hierarchy pane, click the add subclass button to add a child class to 'hypereosinophilic syndrome'</p>
+</li>
+</ul>
+<p><img alt="" src="https://lh6.googleusercontent.com/8Yx82gFh0zvlnoXVnkGerib50qgHcy2V4yYczwL5MRxiJ_XatFkLBAKjJiX9ZyDbyjhDhKx6i1g65o8YvlhABB_Z86mdj1yORgUqImocZm9Y6-sipAisTWhWbHEatGHYGXKEBKI8" /></p>
+<p>A dialog will popup. Name this new subclass: migratory muscle precursor. Click "OK" to add the class.</p>
+<p><img alt="" src="https://lh3.googleusercontent.com/gMbBBAo_zVdGvXDUBJmMTTZ-bXWCNImi2fcG9CD0d4TBVg5Sx8r4hHr1AAObc6wIM6asK3EIpvlvrVaBkA-y2RGvzuZV80wa-cVJl22WXtweovy-5KI-7v4hwiW5WolyDYr0i_VE" /></p>
+<p><img alt="" src="https://lh6.googleusercontent.com/TCbFb62jli65bjmYi-mCfabqtQTEh678Y-4Q6MErJb3fpw_nJ7dxuBPS-9KFqwwMl2Lz1TLQdKdlJ4agHWYv2M4Azo8Qxq7CSKWXHyI4JUCjvcntE1eRwMT_y6npPYzsM7ZcaRsZ" /></p>
+<h4 id="adding-annotations">Adding annotations<a class="headerlink" href="#adding-annotations" title="Permanent link">&para;</a></h4>
+<p>Using Protégé you can add annotations such as labels, definitions, synonyms, database cross references (dbxrefs) to any OWL entity. The panel on the right, named Annotations, is where these annotations are added. CL includes a pre-declared set of annotation properties. The most commonly used annotations are below. </p>
+<ul>
+<li>rdfs:label</li>
+<li>definition</li>
+<li>has_exact_synonym</li>
+<li>has_broad_synonym</li>
+<li>has_narrow_synonym</li>
+<li>has_related synonym</li>
+<li>database_cross_reference</li>
+<li>rdfs:comment</li>
+</ul>
+<p>Note, most of these are bold in the annotation property list:</p>
+<p><img alt="" src="https://lh5.googleusercontent.com/NL1uWNo9KSETrkPBCCG92Tw6CSsE0oW7qIPZWK6NJ7PJx6YdGE4YxaFEZgN5OfMf8VzTVNmL2whgIv2FvSkYc0ASHM4YfN0l8psVcgjT-5SG2uEDncBUMoCozhP1vjqRyYPnIprS" /></p>
+<p>Use this panel to add a definition to the class you created. Select the + button to add an annotation to the selected entity. Click on the annotation 'definition' on the left and copy and paste in the definition to the white editing box on the right. Click OK.</p>
+<p>Definition: A disorder characterized by episodes of swelling under the skin (angioedema) and an elevated number of the white blood cells known as eosinophils (eosinophilia). During these episodes, symptoms of hives (urticaria), fever, swelling, weight gain and eosinophilia may occur. Symptoms usually appear every 3-4 weeks and resolve on their own within several days. Other cells may be elevated during the episodes, such as neutrophils and lymphocytes. Although the syndrome is often considered a subtype of the idiopathic hypereosinophilic syndromes, it does not typically have organ involvement or lead to other health concerns.</p>
+<p><img alt="" src="https://lh3.googleusercontent.com/4p6jqLqln6U1NHs71h30sdbqfPjSop7KxLJrF_JFfapYPPnBL1A3uA4MHRhqXHUA5YLN7rezy7SD1vNH-KslUWM5qb_Z8PP9IWQJSfg2GzX5XL3aa1CkcAtiR46tETCnwzIXHukm" /></p>
+<p><img alt="" src="https://lh4.googleusercontent.com/TP0O04TD6kN1rEn1EM1GcXoWJGz-EsFNihzHSOQi-Q4tq65f1Qpd66ItPFVqn6SuQhDge5PSbiXGz2XwoykEYKxe6f3wwCN0j70bNv3WArJE_wOZSjeMNokuLVEx0r9Odbh0rG9L" /></p>
+<p>Definitions in Mondo should have a 'database cross reference' (dbxref), which is a reference to the definition source, such as a paper from the primary literature or another database. For references to papers, we cross reference the PubMed Identifier in the format, PMID:XXXXXXXX. (Note, no space)</p>
+<p>To add a dbxref to the definition:</p>
+<ul>
+<li>Click the @ symbol next to the definition</li>
+<li>Click the + button next in the pop-up window</li>
+<li>Scroll up on the left hand side until you find 'database_cross_reference', and click it</li>
+<li>Add the PMID in the editing box (PMID:25527564). _Note: the PMID should not have any spaces)</li>
+<li>Click OK</li>
+<li>Add the additional dbxref: GARD:0013029</li>
+<li>The dbxrefs should appear as below.</li>
+</ul>
+<p><img alt="" src="https://lh6.googleusercontent.com/l589uvv3OKKxrabrqKQdL-NF6PfKi_mSfaz-xk--59WtSD15VOy9CQVZXdE0SHl6ZA761zv9G0UULHF5EKRfMToX2F0kqrwuGbjdnzVV3JRRJbb2l40UjOLeXi-7aM_TBkCSkN3L" /></p>
+<p><img alt="" src="https://lh6.googleusercontent.com/aW3quN013aSDfyFXpn-_prKrn0TN7eMzodwK4HdryZ_Zbjade5xZWnFCVt8flkRqIbMy5eT5lKzFEimuGNgJ3YYYybI5rgdcmVWUzzfdwFeXjJSFBpNjqgv27kZVPiazcMiZABn1" /></p>
+<h4 id="add-synonyms-and-database-cross-reference">Add Synonyms and Database cross reference<a class="headerlink" href="#add-synonyms-and-database-cross-reference" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Add synonyms </li>
+<li>Click the add annotations button</li>
+<li>Add the following synonyms as 'has_exact_synonym': </li>
+<li>EAE</li>
+<li>Gleich's syndrome</li>
+<li>Gleich syndrome</li>
+<li>All synonyms in Mondo should have a dbxref on the synonym</li>
+<li>Click the @ symbol next to the synonym</li>
+<li>Click the + button</li>
+<li>Add the dbxref to each synonym: GARD:0013029</li>
+<li>Add database cross reference</li>
+<li>Click the add annotations button</li>
+<li>Add the following database_cross_reference':</li>
+<li>GARD:0013029</li>
+<li>Click the @ symbol next to the synonym</li>
+<li>Click the + button</li>
+<li>Add source: MONDO:equivalentTo</li>
+</ol>
+<p><a name="class-description"></a> </p>
+<h3 id="the-class-description-view">The Class description view<a class="headerlink" href="#the-class-description-view" title="Permanent link">&para;</a></h3>
+<p>We have seen how to add sub/superclasses and annotate the class hierarchy. Another way to do the same thing is via the Class description view. When an OWL class is selected in the entities view, the right-hand side of the tab shows the class description panel. If we select the 'vertebral column disease' class, we see in the class description view that this class is a "SubClass Of" (= has a SuperClass) the 'musculoskeletal system disease' class. Using the (+) button beside "SubClass Of" we could add another superclass to the 'skeletal system disease' class.</p>
+<p>Note the Anonymous Ancestors. These are superclasses that are inherited from the parents. If you hover over the Subclass Of (Anonymous Ancestor) you can see the parent that the class inherited the superclass from.</p>
+<p><img alt="" src="https://lh4.googleusercontent.com/hC3R3tw3S5eVNLc70iCN0lrtj9rD_gIPUBxberpw4gSRRR6xct1Xv5dHYSfXPchpYvpGMhIgGnQQ18dl6pWicyClpL-GGyi_JjkeSKOetm4hleSfA-kxu6ww6v-3q-NOLj3xhd7m" /></p>
+<h4 id="revising-a-superclass">Revising a superclass:<a class="headerlink" href="#revising-a-superclass" title="Permanent link">&para;</a></h4>
+<ol>
+<li>
+<p>If you want to revise the superclass, click the 'o' symbol next to the superclass and replace the text. Try to revise 'musculoskeletal system disease' to  'disease by anatomical system'.</p>
+</li>
+<li>
+<p>If you want to delete a superclass, click the 'x' button next to the superclass. Delete the 'disease by anatomical system' superclass.</p>
+</li>
+</ol>
+<p>Close this window without saving.</p>
+<p>Save your work.</p>
+<h3 id="make-a-pull-request">Make a Pull Request<a class="headerlink" href="#make-a-pull-request" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>Click: Create Pull Request in GitHub Desktop</p>
+</li>
+<li>
+<p>This will automatically open GitHub Desktop </p>
+</li>
+<li>
+<p>Click the green button 'Create pull request'</p>
+</li>
+<li>
+<p>You may now add comments to your pull request. </p>
+</li>
+<li>
+<p>The CL editors team will review your PR and either ask for changes or merge it.</p>
+</li>
+<li>
+<p>The changes will be available in the next release.</p>
+</li>
+</ol>
+<p><a name="pattern"></a> </p>
+<h2 id="ontology-design-patterns">Ontology design patterns<a class="headerlink" href="#ontology-design-patterns" title="Permanent link">&para;</a></h2>
+<p>Dead Simple Ontology Design Patterns (DOSDPs) are specifications, written in yaml format, that specify how ontology terms should be created (see <a href="https://jbiomedsem.biomedcentral.com/articles/10.1186/s13326-017-0126-0">article here</a>). They can be used to:
+- generate documentation
+- generate new terms
+- retrofit existing ontology terms </p>
+<p>DOSDPs have some key features:
+- <strong>Description</strong>: that describes the purpose of the patterns
+- <strong>Examples</strong>: Provides examples of terms that use the Patterns
+- <strong>Declared classes</strong>: these are the classes that are used in the pattern. Any subclass of the declared class can be used in this pattern.
+- <strong>Declared relationships</strong>: the relationships used in the logical axioms
+- <strong>vars</strong>: the variable classes that are used in the pattern. Any subclass of the 'var' can be used in this pattern.
+- <strong>Pattern for class name, annotations, text definition and equivalentTo (logical definition)</strong>: Ontology classes are used as 'fillers' to create new classes that conform to the specific patterns.</p>
+<p>Examples of design patterns are available here:
+- <a href="https://github.com/obophenotype/upheno/tree/master/src/patterns/dosdp-dev">uPheno pattern library</a>
+- <a href="https://github.com/monarch-initiative/mondo/tree/master/src/patterns/dosdp-patterns">Mondo Disease Ontology pattern library</a></p>
+<p><a name="template"></a> </p>
+<h2 id="use-templates-robot-dosdp">Use templates: ROBOT, DOSDP<a class="headerlink" href="#use-templates-robot-dosdp" title="Permanent link">&para;</a></h2>
+<p><em>under development</em></p>
+<p><a name="owl"></a> </p>
+<h2 id="basics-of-owl">Basics of OWL<a class="headerlink" href="#basics-of-owl" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Clone the <a href="https://github.com/OHSUBD2K/BDK14-Ontologies-101">Ontologies 101</a> repository, then open the folder <code>BDK14_exercises</code> from your file system</li>
+<li>Open <code>basic-subclass/chromosome-parts.owl</code> in Protégé, then do the following exercises:<ul>
+<li><a href="https://ontology101tutorial.readthedocs.io/en/latest/EXERCISE_BasicSubclassHierarchy.html">Basic Subclass Hierarchy</a> (review) - make sure to look at the "detailed instructions" for adding annotations here, as it will go over adding annotations on annotation assertions</li>
+<li><a href="https://ontology101tutorial.readthedocs.io/en/latest/Disjointness.html">Disjointness</a></li>
+<li><a href="https://ontology101tutorial.readthedocs.io/en/latest/ObjectProperties.html">Object Properties</a> - note that you will rarely, if ever, be making object properties, as most of the properties you'll ever need are defined in the <a href="http://www.obofoundry.org/ontology/ro.html">Relation Ontology</a></li>
+<li><a href="https://ontology101tutorial.readthedocs.io/en/latest/OWL_ClassRestrictions.html">OWL Class Restrictions</a></li>
+</ul>
+</li>
+<li>Open <code>basic-restriction/er-sec-complex.owl</code> in Protégé, then do the following exercise:<ul>
+<li><a href="https://ontology101tutorial.readthedocs.io/en/latest/EXERCISE_BasicRestrictions.html">Basic Restrictions</a></li>
+</ul>
+</li>
+<li>Open <code>basic-dl-query/cc.owl</code> in Protégé, then do the following exercises:<ul>
+<li><a href="https://ontology101tutorial.readthedocs.io/en/latest/DL_QueryTab.html">DL Query Tab</a> - note that <code>owl:Nothing</code> is defined as the very bottom node of an ontology, therefore the DL query results will show <code>owl:Nothing</code> as a subclass. This is expected and does not mean there is a problem with your ontology! It's only bad when something is a subclass of <code>owl:Nothing</code> and therefore <em>unsatisfiable</em> (more on that below).</li>
+<li><a href="https://ontology101tutorial.readthedocs.io/en/latest/EXERCISE_BasicDL_Queries.html">Basic DL Queries</a></li>
+</ul>
+</li>
+<li>Open <code>basic-classification/ubiq-ligase-complex.owl</code> in Protégé, then do the following exercises:<ul>
+<li><a href="https://ontology101tutorial.readthedocs.io/en/latest/EXERCISE_BasicClassification.html">Basic Classification</a></li>
+</ul>
+</li>
+<li>Read <a href="http://ontogenesis.knowledgeblog.org/1329/">(I can't get no) satisfiability</a> (~10 minutes)</li>
+<li><strong>Optional</strong>: Open a new ontology in Protégé. Try creating an <em>inconsistent</em> ontology using the classes and instances in the first Pets example (hint: you'll also need to create the "eats" object property)... what happens when you run the reasoner? </li>
+</ul>
+<p><a name="logic"></a>   </p>
+<h2 id="logic-and-debugging">Logic and debugging<a class="headerlink" href="#logic-and-debugging" title="Permanent link">&para;</a></h2>
+<p>Below are exercises to demonstrate how to:
+  - Add equivalent axioms (logical definitions) to ontology terms
+  - Run the reasoner and view the inferred hierarchy
+  - Debugging and viewing explanations</p>
+<h4 id="practice-adding-logic-and-debugging">Practice adding logic and debugging<a class="headerlink" href="#practice-adding-logic-and-debugging" title="Permanent link">&para;</a></h4>
+<p>These instructions will use the <a href="https://github.com/monarch-initiative/mondo">Mondo disease ontology</a> as an example.</p>
+<h3 id="practice-part-1">Practice (Part 1)<a class="headerlink" href="#practice-part-1" title="Permanent link">&para;</a></h3>
+<h4 id="add-new-terms-with-an-equivalance-axiom-to-mondo">Add New Terms with an Equivalance Axiom to Mondo:<a class="headerlink" href="#add-new-terms-with-an-equivalance-axiom-to-mondo" title="Permanent link">&para;</a></h4>
+<h5 id="creating-a-new-class_1">Creating a new class<a class="headerlink" href="#creating-a-new-class_1" title="Permanent link">&para;</a></h5>
+<p>New classes are created in the Class hierarchy panel on the left.</p>
+<p>There are three buttons at the top of the class hierarchy view. These allow you to add a subclass (L-shaped icon), add a sibling class (c-shaped icon), or delete a selected class (x'd circle).</p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/6722114/118696258-f791d480-b7c2-11eb-836a-a594227c6da9.png" /></p>
+<h4 id="practice-adding-a-new-term">Practice adding a new term:<a class="headerlink" href="#practice-adding-a-new-term" title="Permanent link">&para;</a></h4>
+<h5 id="add-the-new-term-mycotoxin-allergy">Add the new term 'mycotoxin allergy'<a class="headerlink" href="#add-the-new-term-mycotoxin-allergy" title="Permanent link">&para;</a></h5>
+<ol>
+<li>Navigate to the Mondo repo in GitHub Desktop, create a branch, and open mondo-edit.obo in Protege.</li>
+<li>Search for the parent term 'allergic disease' (see <a href="https://github.com/jamesaoverton/obook/blob/master/04-OntologyTheory/SearchingMondo.md">search guide</a> if you are unsure how to do this).</li>
+<li>When you are clicked on the term in the Class hierarchy pane, click the add subclass button to add a child class to 'allergic disease'</li>
+<li>A dialog will popup. Name this new subclass: mycotoxin allergy. Click "OK" to add the class.</li>
+</ol>
+<h5 id="add-annotations-and-a-logical-axiom">Add annotations and a logical axiom<a class="headerlink" href="#add-annotations-and-a-logical-axiom" title="Permanent link">&para;</a></h5>
+<p>Equivalence axioms in Mondo are added according to Dead Simple Ontology Design Patterns (DOSDPs). You can view all of the design patterns in Mondo by going to <a href="https://github.com/monarch-initiative/mondo/tree/master/src/patterns/dosdp-patterns">code/src/patterns/dosdp-patterns/</a></p>
+<p>For this class, we want to follow the design pattern for <a href="https://github.com/monarch-initiative/mondo/blob/master/src/patterns/dosdp-patterns/allergy.yaml">allergy</a>.</p>
+<ol>
+<li>Review this pattern before proceeding.</li>
+<li>Based on the pattern specifications, add a text definition to this term.</li>
+<li>Add the database cross reference to this term: MONDO:patterns/allergy</li>
+<li>Add a synonym that is consistent with this pattern.</li>
+</ol>
+<p><img alt="image" src="https://user-images.githubusercontent.com/6722114/118697325-07f67f00-b7c4-11eb-8d6d-7f2dd9cdcd62.png" /></p>
+<ol>
+<li>Add the equivalence axiom according to the pattern specifications.</li>
+</ol>
+<p><img alt="image" src="https://user-images.githubusercontent.com/6722114/118697461-28263e00-b7c4-11eb-8821-f4ac77f99c81.png" /></p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/6722114/118697511-37a58700-b7c4-11eb-82d1-9850c6e05811.png" /></p>
+<ol>
+<li>Run the reasoner</li>
+<li>View the inferred hierarchy. You should see a child of owl:Nothing (and you should see this in the Description pane as well.)</li>
+</ol>
+<p><img alt="image" src="https://user-images.githubusercontent.com/6722114/118697828-92d77980-b7c4-11eb-917b-0dca0e296013.png" /></p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/6722114/118697862-9cf97800-b7c4-11eb-99e5-8b303ef9b37d.png" /></p>
+<ol>
+<li>Click on the ? button next to the owl:Nothing in the Description view</li>
+<li>The explanation tells you the reason why this is unsatisfiable</li>
+</ol>
+<p><img alt="image" src="https://user-images.githubusercontent.com/6722114/118697993-c3b7ae80-b7c4-11eb-8f6e-3f74fdd4b3da.png" /></p>
+<ol>
+<li>Mycotoxin is a child of a 'specifically dependent continuant' and and 'independent continuant' is disjoint with 'specifically dependent continuant'.</li>
+<li>This logical axiom uses the relation 'realized in response to stimulus'</li>
+<li>Click on this relation in Protege (you can click on the relation name in the equivalence axiom, or you can click on the Object properties tab and search for this relation.</li>
+<li>There are domain and range restrictions on this property, where the range has to be a material enity. Chebi mycotoxin is actually a role, so it is not a material entity. </li>
+</ol>
+<p><img alt="image" src="https://user-images.githubusercontent.com/6722114/118698760-a33c2400-b7c5-11eb-8c8c-85c91c9a7dab.png" /></p>
+<ol>
+<li>Go back to the Classes or Entities pane and remove the equivalence axiom and run the reasoner again. You should now see no unsatisfiable classes.</li>
+</ol>
+<h3 id="practice-part-2">Practice (Part 2)<a class="headerlink" href="#practice-part-2" title="Permanent link">&para;</a></h3>
+<h2 id="add-a-new-term-with-an-equivalance-axiom-to-mondo">Add a New Term with an Equivalance Axiom to Mondo:<a class="headerlink" href="#add-a-new-term-with-an-equivalance-axiom-to-mondo" title="Permanent link">&para;</a></h2>
+<h3 id="add-annotations-and-logical-definition-equivalence-axiom-to-mondo0004549-cork-handlers-disease">Add annotations and logical definition (equivalence axiom) to MONDO:0004549 'cork-handlers' disease'<a class="headerlink" href="#add-annotations-and-logical-definition-equivalence-axiom-to-mondo0004549-cork-handlers-disease" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Create a new branch (named cork-handler) and open mondo-edit.obo in Protege.</li>
+<li>Search for the term <code>cork-handlers' disease</code></li>
+</ol>
+<p>For this class, we want to follow the design pattern for <a href="https://github.com/monarch-initiative/mondo/blob/master/src/patterns/dosdp-patterns/specific_infectious_disease_by_agent.yaml">specific_infectious_disease_by_agent</a> with a slight modification, this will be modeled after <code>MONDO:0002266 'malt worker's lung'</code>.</p>
+<ol>
+<li>Add the synonym: <code>cork worker's lung</code></li>
+<li>Add the equivalence axiom according to the pattern specifications.</li>
+</ol>
+<p><code>'extrinsic allergic alveolitis'
+ and 'infectious disease'
+ and ('disease has infectious agent' some Penicillium glabrum)</code></p>
+<ol>
+<li>Run the reasoner</li>
+<li>View the inferred hierarchy.</li>
+<li>Confirm that there are no unsatisifiable classes and everything looks okay.</li>
+<li>Save your work and create a pull request and reference issue #1639.</li>
+</ol>
+<h3 id="add-annotations-and-logical-definition-equivalence-axiom-to">Add annotations and logical definition (equivalence axiom) to<a class="headerlink" href="#add-annotations-and-logical-definition-equivalence-axiom-to" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Create a new branch (named farmer-lung) and open mondo-edit.obo in Protege.</li>
+<li>Search for the term <code>'farmer's lung disease'</code></li>
+<li>
+<p>Similar to above, we want to add a logical axiom. In this case though, Farmer's lung can be caused by more than one infectious agent, so we'll add this as a subclassOf axiom:
+ <code>'disease has infectious agent' some Penicillium glabrum</code>
+<img alt="image" src="https://user-images.githubusercontent.com/6722114/118717601-1f8d3200-b7db-11eb-9517-320a2e21445f.png" /></p>
+</li>
+<li>
+<p>Run the reasoner</p>
+</li>
+<li>View the inferred hierarchy.</li>
+<li>Confirm that there are no unsatisifiable classes and everything looks okay. <em>Does the new inferred class make sense?</em></li>
+</ol>
+<p><img alt="image" src="https://user-images.githubusercontent.com/6722114/118717934-8874aa00-b7db-11eb-86df-01a5823f7f7b.png" /></p>
+<ol>
+<li>Save your work and create a pull request and reference issue <a href="https://github.com/monarch-initiative/mondo/issues/1639">#1639</a>.</li>
+</ol>
+<h2 id="great-further-reading">Great further reading<a class="headerlink" href="#great-further-reading" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://douroucouli.wordpress.com/2019/07/08/ontotip-write-simple-concise-clear-operational-textual-definitions/">Chris Mungall on how to write great textual definitions</a></li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../ontology_pipelines/" class="btn btn-neutral float-right" title="Ontology Pipelines with ROBOT">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../contributing/" class="btn btn-neutral" title="Contribe to the course"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../contributing/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../ontology_pipelines/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

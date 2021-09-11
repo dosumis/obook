@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Setting up the ODK - OBO Semantic Engineering Training</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Setting up the ODK";
+    var mkdocs_page_input_path = "howto/odk_setup.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> OBO Semantic Engineering Training</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">About the course</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../getting_started/">Getting started with learning</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../contributing/">Contribe to the course</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="" href="../../cite.md">Table of contents</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Lessons</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../lesson/contributing_to_obo_ontologies/">Contributing to OBO ontologies</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../lesson/ontology_pipelines/">Ontology Pipelines with ROBOT</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">How-to guides</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../installing_elk_in_protege/">Installing ELK in Protege</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Setting up the ODK</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#for-windows">For Windows</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#for-maclinux">For Mac/Linux</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#problems-with-memory">Problems with memory</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">OBO Semantic Engineering Training</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>How-to guides &raquo;</li>
+        
+      
+    
+    <li>Setting up the ODK</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="getting-set-up-with-docker-and-the-ontology-development-kit">Getting set up with Docker and the Ontology Development Kit<a class="headerlink" href="#getting-set-up-with-docker-and-the-ontology-development-kit" title="Permanent link">&para;</a></h1>
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
+<h3 id="for-windows">For Windows<a class="headerlink" href="#for-windows" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Follow the instructions <a href="https://hub.docker.com/editions/community/docker-ce-desktop-windows">here</a>. Note that you should have Windows 10 Professional installed for this to work. We are not sure Docker Desktop works at all with Windows 10 Home, but we have not tried in a while. If you know what you are doing, you could try to configure Docker toolbox, but we have had many issues with it, and do not recommend it unless absolutely necessary.</li>
+<li>Once installed, you should be able to open your command line and download the ODK.</li>
+<li>Click on your Windows symbol (usually in bottom left corner of screen), type "cmd" and you should be able to see and open the Command Line tool.</li>
+<li>in the command line type, type <code>docker pull obolibrary/odkfull</code>. This will download the ODK (will take a few minutes, depending on you internet connection).</li>
+<li>Executing something in a Docker container can be "wordy", because the docker container requires quite a few parameters to be run. To make this easier, we prepared a wrapper script <a href="../../resources/odk.bat">here</a>. You can download this file by clicking on <code>Raw</code>, and then, when the file is open in your browser, CTRL+S to save it. Ideally, you save this file in your project directory, the directory you will be using for your exercises, as it will only allow you to edit files in that very same directory (or one of its sub-directories).</li>
+<li>Setting the memory: 
+Typical issues (WSL 1 vs 2)</li>
+</ul>
+<h3 id="for-maclinux">For Mac/Linux<a class="headerlink" href="#for-maclinux" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://www.docker.com/get-docker">Install docker</a>: Install Docker following the official instructions.</li>
+<li>Make sure its running properly, for example by typing <code>docker ps</code> in your terminal or command line (CMD). If all is ok, you should be seeing something like: </li>
+</ul>
+<pre><code>CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+</code></pre>
+<ul>
+<li>Run <code>docker pull obolibrary/odkfull</code> on your command line to install the ODK. This will take while.</li>
+<li>Download an <a href="../../resources/odk.sh">ODK wrapper script</a>. The odk.sh has further instruction on how to best use it.</li>
+<li>Now you are ready to go to a directory containing the odk.sh wrapper script and running <code>sh odk.sh robot --version</code> to see whether it works.</li>
+</ul>
+<h2 id="problems-with-memory">Problems with memory<a class="headerlink" href="#problems-with-memory" title="Permanent link">&para;</a></h2>
+<p>ne of the most frequent problems with running the ODK for the first time is failure because of lack of memory. This can look like a Java OutOfMemory exception, 
+but more often than not it will appear as something like an <code>Error 137</code>. There are two places you need to consider to set your memory:</p>
+<ol>
+<li>Your ODK wrapper script (see above), i.e. odk.bat, odk.sh or src/ontology/run.sh (or run.bat) file. You can set the memory in there by adding 
+<code>robot_java_args: '-Xmx8G'</code> to your src/ontology/cl-odk.yaml file, see for example <a href="https://github.com/INCATools/ontology-development-kit/blob/0e0aef2b26b8db05f5e78b7c38f807d04312d06a/configs/uberon-odk.yaml#L36">here</a>.</li>
+<li>Set your docker memory. By default, it should be about 10-20% more than your <code>robot_java_args</code> variable. You can manage your memory settings
+by right-clicking on the docker whale in your system bar--&gt;Preferences--&gt;Resources--&gt;Advanced, see picture below.</li>
+</ol>
+<p><img alt="dockermemory" src="../../images/docker_memory.png" /></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../installing_elk_in_protege/" class="btn btn-neutral" title="Installing ELK in Protege"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../installing_elk_in_protege/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

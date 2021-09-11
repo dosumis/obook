@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Github issues - OBO Semantic Engineering Training</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Github issues";
+    var mkdocs_page_input_path = "tutorial/github_issues.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> OBO Semantic Engineering Training</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">About the course</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../getting_started/">Getting started with learning</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../contributing/">Contribe to the course</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="" href="../../cite.md">Table of contents</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Lessons</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../lesson/contributing_to_obo_ontologies/">Contributing to OBO ontologies</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../lesson/ontology_pipelines/">Ontology Pipelines with ROBOT</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">How-to guides</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../howto/installing_elk_in_protege/">Installing ELK in Protege</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../howto/odk_setup/">Setting up the ODK</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">OBO Semantic Engineering Training</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Github issues</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="intro-to-managing-and-tracking-issues-in-github">Intro to managing and tracking issues in GitHub<a class="headerlink" href="#intro-to-managing-and-tracking-issues-in-github" title="Permanent link">&para;</a></h2>
+<h3 id="overview"><a href="#overview">Overview</a><a class="headerlink" href="#overview" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="#create-issues">How to create issues</a></li>
+<li><a href="#assign-issues">How to assign issues</a></li>
+<li><a href="#communicate-about-issues">How to communicate about issues</a></li>
+<li><a href="#organize-issues">How to organize issues</a></li>
+<li><a href="#query-issues">How to query issues</a></li>
+<li><a href="#close-issues">How to close issues</a></li>
+<li><a href="#teams">How to assign teams</a></li>
+<li><a href="#help">Where to go when you need help</a></li>
+<li><a href="#miscellany">Miscellany that is good to know</a></li>
+</ul>
+<h3 id="create-issues">Create issues<a class="headerlink" href="#create-issues" title="Permanent link">&para;</a></h3>
+<p><a href="#overview">Back to top</a></p>
+<p><strong>Why:</strong>
+"Issues are a great way to keep track of <strong>tasks</strong>, <strong>enhancements</strong>, and <strong>bugs</strong> for your projects or for anyone else's. As long as you are a registered GitHub user you can log an issue, or comment on an issue for any open repo on GitHub. Issues are a bit like email—except they can be shared, intelligently organized, and discussed with the rest of your team. GitHub’s tracker is called Issues, and has its own section in every repository." (From: https://guides.github.com/features/issues/)</p>
+<p><strong>How:</strong></p>
+<p>How to create an issue in GitHub:</p>
+<ul>
+<li>We will practice creating tickets in this repository <a href="https://github.com/nicolevasilevsky/c-path-practice">https://github.com/nicolevasilevsky/c-path-practice</a></li>
+<li>Click "issues"</li>
+<li>Click "New Issue" (note the word 'issue' and 'ticket' are frequently used interchangeably)</li>
+<li>Write an informative title</li>
+<li>Write a detailed explanation of your issue</li>
+<li>In the case of reporting software bugs, provide some context in which the issue was encountered (e.g. bug detected when using Google Chrome on a Mac OS)</li>
+<li>If you know the sub-tasks that are involved, list these using <code>- [ ]</code> markdown syntax before each bullet. Note, you can also add sub-tasks by clicking the 'add a task list' button in the tool bar. The status of the tasks in an issue (eg. <a href="https://github.com/nicolevasilevsky/c-path-practice/issues/1">https://github.com/nicolevasilevsky/c-path-practice/issues/1</a> will then be reflected in any summary view. Eg. <a href="https://github.com/nicolevasilevsky/c-path-practice/issues">https://github.com/nicolevasilevsky/c-path-practice/issues</a>.</li>
+<li>Click Submit new issue</li>
+<li>Edit the issue (if needed) (Note that post-hoc edits will not propagate to email notifications).</li>
+</ul>
+<p><strong>Your turn:</strong></p>
+<p>Follow the instructions above to create a ticket about a hypothetical issue (such as an improvement to this tutorial) that includes a sub-task list.</p>
+<h3 id="assign-issues">Assign issues<a class="headerlink" href="#assign-issues" title="Permanent link">&para;</a></h3>
+<p><a href="#overview">Back to top</a></p>
+<p><strong>Assign issues to people</strong></p>
+<ul>
+<li>On the top right hand side, click "Assignees"</li>
+<li>You can assign issues to yourself or other people who are part of the repository</li>
+<li>In the box, start typing type their name or GitHub handle</li>
+<li>It is possible to assign up to 10 handles at once (assignment to a team is currently not supported)</li>
+</ul>
+<p><strong>Add labels</strong></p>
+<ul>
+<li>On the top right hand side, click "Labels"</li>
+<li>Assign a relevant label to your ticket</li>
+<li>Note, by default, every GitHub repo comes with some standard labels</li>
+<li>You can also create new labels that are specific to your project. For example see the <a href="https://github.com/monarch-initiative/mondo/labels">labels on the Mondo GitHub tracker</a></li>
+</ul>
+<p><strong>New Labels</strong></p>
+<ul>
+<li>In GitHub, navigate to the <a href="https://github.com/nicolevasilevsky/c-path-practice/issues">Issues page</a> or the <a href="https://github.com/nicolevasilevsky/c-path-practice/pulls">pull requests tab</a></li>
+<li>Click Labels button next to the search field</li>
+<li>Click New Label to create a new label, or click Edit to edit an existing one.</li>
+<li>In the text box, type your new label name.</li>
+<li>Select a color for the label from the color bar. You can customize this color by editing the hexadecimal number above the color bar. For a list of hexadecimal numbers see <a href="http://htmlcolorcodes.com/">HTML color codes</a></li>
+<li>Click Create Label to save the new label.</li>
+</ul>
+<p><strong>Your turn:</strong></p>
+<p>On the ticket you previously created:</p>
+<ul>
+<li>Assign the ticket to someone</li>
+<li>Add a label for an enhancement</li>
+<li>Create a new label and add it to the ticket</li>
+</ul>
+<h3 id="communicate-about-issues">Communicate about issues<a class="headerlink" href="#communicate-about-issues" title="Permanent link">&para;</a></h3>
+<p><a href="#overview">Back to top</a></p>
+<p><strong>Comment on issues</strong></p>
+<ul>
+<li>Click on an issue in the issue tracker in the <a href="https://github.com/nicolevasilevsky/c-path-practice/issues">https://github.com/nicolevasilevsky/c-path-practice/issues</a> repo</li>
+<li>Scroll to the bottom of the issue, and add content in the "Leave a comment" field</li>
+<li>Use the top tool bar to format your text, add <strong>bold</strong>, <em>italic</em>, lists etc.</li>
+<li>Preview your text to see how your formatting looks</li>
+<li>Click Comment. </li>
+</ul>
+<p><strong>Close issues</strong>
+- If an issue has been addressed, click Close Issue. Best practice is to point to the work (whether code, documentation, etc) that has been done to close it.
+- Only close the ticket if the issue has been resolved, usually someone will write a comment describing the action they did to close the issue and click Close Issue. 
+- The issue will no longer be dispalyed in the list of open issue, but will be archived.
+- When making a change to code or documentation in GitHub, it is possible to automatically couple a change to an issue and close it. Just use 'fixes' or 'closes' followed by the issue number.</p>
+<p><strong>Use direct @ mentions</strong></p>
+<ul>
+<li>You can mention someone in a issue without assigning it to them</li>
+<li>In the comments section, type @github handle. For example, to mention Nicole, you would type @nicolevasilevsky. You can either start typing their name or GitHub handle and GitHub will autosuggest their handle.</li>
+</ul>
+<p><strong>Link documents</strong></p>
+<p>You can link documents and files by:</p>
+<ul>
+<li>copy and pasting URL</li>
+<li>you can attach files by dragging and dropping</li>
+<li>You can link one issue to another in the same repo by typing '#' followed by the title of the ticket</li>
+<li>This approach also works across repos but you need to use the full URL (no autocomplete available). Doing this will also cause the referent issue to display that it has been referenced.</li>
+</ul>
+<p><strong>Cross reference to another ticket</strong></p>
+<ul>
+<li>If your ticket is a duplicate or related to another ticket, you can cross reference another ticket</li>
+<li>Type # and you will see a list of other tickets in that repo</li>
+<li>Type #TicketNumber and that will link to the other ticket.</li>
+</ul>
+<p><strong><em>Before saving your changes, you can preview the comment to ensure the correct formatting.</em></strong></p>
+<p><strong>Your turn:</strong></p>
+<ul>
+<li>Follow the instructions above to comment on a ticket that someone created.</li>
+<li>Mention Nicole</li>
+<li>Attach a picture (such as a picture you copy from the internet, or attach a picture you have saved on your computer)</li>
+<li>Include a comment that says, 'related to #1' and link to ticket <a href="https://github.com/nicolevasilevsky/c-path-practice/issues/1">#1</a></li>
+</ul>
+<h3 id="organize-issues">Organize issues<a class="headerlink" href="#organize-issues" title="Permanent link">&para;</a></h3>
+<p><a href="#overview">Back to top</a></p>
+<p><strong>Milestones</strong></p>
+<ul>
+<li>To create a milestone, navigate to the issues page in your repository</li>
+<li>Next to the search field, click <strong>Milestones</strong></li>
+<li>Click <strong>New Milestone</strong> to create a new milestone, click <strong>Edit</strong> to edit an existing one</li>
+<li>Create a milestone that is broad enough to be meaningful, but specific enough to be actionable.</li>
+<li>Set a due date for the milestone (note that specific tasks can not be formally assigned due dates, though you can mention a desired due date in the narrative text of a ticket.</li>
+<li>Each ticket can only be associated to ONE milestone, however it can have as many labels as appropriate.</li>
+<li>A given issue can be part of multiple "project" boards (see below)</li>
+</ul>
+<p><strong>Your turn</strong></p>
+<p>Create a new milestone, and add the milestone to an existing ticket.</p>
+<p><strong>Projects</strong></p>
+<ul>
+<li>Projects is a lot like Trello, it uses cards on a list that you can name and organize as you see fit.</li>
+<li>You can create as many projects within a repository as you like</li>
+</ul>
+<p>To create project:</p>
+<ul>
+<li>Click on Projects</li>
+<li>Click New Project</li>
+<li>Name the project</li>
+<li>Write a description of the project</li>
+<li>Create columns and give them names</li>
+<li>Add 'cards' to the columns</li>
+</ul>
+<p><strong>Your turn</strong></p>
+<p>Create a new project and add columns and add cards to the columns.</p>
+<h3 id="query-issues">Query issues<a class="headerlink" href="#query-issues" title="Permanent link">&para;</a></h3>
+<p><a href="#overview">Back to top</a></p>
+<p>Once you start using GitHub for lots of things it is easy to get overwhelmed by the number of issues. The query dashboard <a href="https://github.com/issues">https://github.com/issues</a> allows you to filter on tickets.
+- All issues assigned to me: <a href="https://github.com/issues/assigned">https://github.com/issues/assigned</a>
+- All issues on which I am @ mentioned: <a href="https://github.com/issues/mentioned">https://github.com/issues/mentioned</a></p>
+<p>More complex queries are also possible.</p>
+<ul>
+<li>All issues either assigned to me OR on which I have commented OR am mentioned: <a href="https://github.com/issues?utf8=%E2%9C%93&amp;q=is%3Aopen+is%3Aissue+involves%3Anicolevasilevsky+">https://github.com/issues?utf8=%E2%9C%93&amp;q=is%3Aopen+is%3Aissue+involves%3Anicolevasilevsky+</a></li>
+</ul>
+<p>Further reading on <a href="https://help.github.com/articles/searching-issues/">Issue querys</a></p>
+<h4 id="nofifications">Nofifications<a class="headerlink" href="#nofifications" title="Permanent link">&para;</a></h4>
+<ul>
+<li>When you join a repository, by default, you are 'watching' all activity. You can change the setting to 'Participating and @mentions' to only get notifications that mention you</li>
+<li>You can set rules in your email to filter for emails that mention you, ie @username.</li>
+</ul>
+<h3 id="help">Help<a class="headerlink" href="#help" title="Permanent link">&para;</a></h3>
+<p><a href="#overview">Back to top</a></p>
+<ul>
+<li>You may find the answers you seek in  <a href="http://stackoverflow.com/questions/tagged/github">StackOverflow</a>, although it is primarily geared towards programmers.</li>
+<li>GitHub kind of monitors <a href="https://github.com/isaacs/github/issues/">https://github.com/isaacs/github/issues/</a> but not with any rigor.</li>
+<li>To be safe, contact GitHub directly at <a href="https://github.com/contact">https://github.com/contact</a>, but recognize that they support literally millions of users and responsiveness is not guaranteed. Forums like isaacs sometimes offer some help because other users can help identify workarounds, for instance, as shown <a href="https://github.com/isaacs/github/issues/65#issuecomment-123740194">here</a>.</li>
+</ul>
+<h4 id="acknowledgements">Acknowledgements<a class="headerlink" href="#acknowledgements" title="Permanent link">&para;</a></h4>
+<p><em>Adopted from <a href="https://data2health.github.io/mtip-tutorial/">CD2H MTIP tutorial</a></em></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

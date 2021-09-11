@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>ROBOT Tutorial 2: Annotate, Merge, Reason and Diff - OBO Semantic Engineering Training</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "ROBOT Tutorial 2: Annotate, Merge, Reason and Diff";
+    var mkdocs_page_input_path = "tutorial/robot_tutorial_2.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> OBO Semantic Engineering Training</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">About the course</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../getting_started/">Getting started with learning</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../contributing/">Contribe to the course</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="" href="../../cite.md">Table of contents</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Lessons</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../lesson/contributing_to_obo_ontologies/">Contributing to OBO ontologies</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../lesson/ontology_pipelines/">Ontology Pipelines with ROBOT</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">How-to guides</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../howto/installing_elk_in_protege/">Installing ELK in Protege</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../howto/odk_setup/">Setting up the ODK</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">OBO Semantic Engineering Training</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>ROBOT Tutorial 2: Annotate, Merge, Reason and Diff</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="robot-tutorial-2-annotate-merge-reason-and-diff">ROBOT Tutorial 2: Annotate, Merge, Reason and Diff<a class="headerlink" href="#robot-tutorial-2-annotate-merge-reason-and-diff" title="Permanent link">&para;</a></h1>
+<p>In week 6, we got some hands-on experience with ROBOT using <code>convert</code>, <code>extract</code>, and <code>template</code>. This week, we will learn four new ROBOT commands:
+* <a href="http://robot.obolibrary.org/annotate">Annotate</a>
+* <a href="http://robot.obolibrary.org/merge">Merge</a>
+* <a href="http://robot.obolibrary.org/reason">Reason</a>
+* <a href="http://robot.obolibrary.org/diff">Diff</a></p>
+<p>The goal of these and previous commands is to build up to creating an ontology release workflow.</p>
+<p>Before starting this tutorial, either:
+* make sure Docker is running and you are in the container
+* <a href="http://robot.obolibrary.org/">download and install ROBOT</a> for your operating system</p>
+<p>To start, we will be working in the same folder as the first ROBOT Mini-Tutorial (this may be the <code>06-Ontology-Development</code> folder). Navigate to this folder in your terminal and list the contents of the current directory by running <code>ls</code>. You should see <code>catalog-v001.xml</code> listed as one of these files. We want to delete this so that we can fix the ontology IRI problem we ran into last week! Before going any further with this tutorial, do this by running either <code>del catalog-v001.xml</code> for Windows or <code>rm catalog-v001.xml</code> if you're using Docker, MacOS, or other Linux system.</p>
+<hr />
+<h2 id="annotate">Annotate<a class="headerlink" href="#annotate" title="Permanent link">&para;</a></h2>
+<p>The <code>annotate</code> command allows you to attach metadata to your ontology in the form of IRIs and ontology annotations. Like the annotations on a term, ontology annotations help users to understand how they can use the ontology.</p>
+<h3 id="ontology-iris">Ontology IRIs<a class="headerlink" href="#ontology-iris" title="Permanent link">&para;</a></h3>
+<p>As we discussed during week 6, ontology IRIs are very important! We saw how importing an ontology without an IRI into another ontology without an IRI can cause some problems in the <code>catalog-v001.xml</code> file. We're going to fix that problem by giving IRIs to both our <code>animals.owl</code> and <code>animals2.owl</code> files.</p>
+<p>Let's start with <code>animals.owl</code>:</p>
+<pre><code>robot annotate --input animals.owl \
+  --ontology-iri http://example.com/animals.owl \
+  --output animals.owl
+</code></pre>
+<p>You'll notice we gave the same file name as the input file; we're just updating our previous file so we don't need to do this in a separate OWL file.</p>
+<p>On your own, give <code>animals2.owl</code> the ontology IRI <code>http://example.com/animals2.owl</code>. Remember that, in reality, we always want our ontology IRIs to be <em>resolvable</em>, so these would be pretty bad IRIs for an actual ontology.</p>
+<p>Let's fix our import statement now. Open <code>animals2.owl</code> in Protégé and go to the <strong>Entities</strong> tab. You'll see that even though we still have the import statement in the <strong>Active ontology</strong> tab, the top-level terms are no longer labeled. Since we changed the ontology IRI, Protégé can no longer resolve our local file (because the <code>catalog-v001.xml</code> file was not updated). Go back to the <strong>Active ontology</strong> tab and click the X to the right of our original import. Then, re-add <code>animals.owl</code> as an import using the same steps as last time. When you return to the <strong>Entities</strong> tab, you'll once again see the labels of the top-level terms.</p>
+<h3 id="version-iris">Version IRIs<a class="headerlink" href="#version-iris" title="Permanent link">&para;</a></h3>
+<p>When we release our ontologies, we want to make sure to include a version IRI. Like the onology IRI, this should always resolve to the version of the ontology at the time of the release. For clarity, we usually use dates in our version IRIs in the OBO Foundry. That way, you know when you navigate to a specific version IRI, that's what the ontology looked like on that date. (Note: edit files don't usually have version IRIs as they are always changing, and we don't expect to be able to point to a stable version)</p>
+<p>While you can add a version IRI in Protégé, if you're trying to create an automated release workflow, this is a manual step you don't want to have to include. Keeping it in your release workflow also makes sure that the verion IRIs are consistent (we'll see how to do this with <code>make</code> later). For now, let's add a version IRI to <code>animals.owl</code> (feel free to replace the <code>2021-05-20</code> with today's date):</p>
+<pre><code>robot annotate --input animals.owl \
+  --version-iri http://example.com/animals/2021-05-20/animals.owl \
+  --output animals.owl
+</code></pre>
+<p>Let's break down this version IRI. We have the host (<code>http://example.com/</code>) followed by our ontology's namespace (<code>animals</code>). Next, we provided the date in the format of <code>YYYY-MM-DD</code>. Finally, we have the name of the file. This is standard for OBO Foundry, except with a different host. For example, you can find a release of OBI from April 6, 2021 at <code>http://purl.obolibrary.org/obo/obi/2021-04-06/obi.owl</code>. In this case, the host is <code>http://purl.obolibrary.org/obo/</code>. Of course, you may see different patterns in non-OBO-Foundry ontologies, but they should always resolve (hopefully!).</p>
+<p>Go ahead and open or reload <code>animals.owl</code> in Protege. You'll see in the <strong>Active Ontology</strong> tab that now both the ontology IRI and version IRI fields are filled out.</p>
+<h3 id="ontology-annotations">Ontology Annotations<a class="headerlink" href="#ontology-annotations" title="Permanent link">&para;</a></h3>
+<p>In addition to ontology and version IRIs, you may also want to add some other metadata to your ontology. For example, when we were introduced to <code>report</code>, we added a description to the ontology to fix one of the report problems. The three ontology annotations that are required by the OBO Foundry are:
+* Title (<code>dc11:title</code>)
+* License (<code>dc:license</code>)
+* Description (<code>dc11:description</code>)</p>
+<p>These three annotation properties all come from the <a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/">Dublin Core</a>, but they have slightly different namespaces. This is because DC is split into two parts: the <code>/terms/</code> and <code>/elements/1.1/</code> namespaces. Just remember to double check that you're using the correct namespace. If you click on the DC link, you can find the complete list of DC terms in their respective namespaces.</p>
+<p>ROBOT contains some built-in prefixes, which can be found <a href="https://github.com/ontodev/robot/blob/master/robot-core/src/main/resources/obo_context.jsonld">here</a>. the prefix <code>dc:</code> corresponds to the <code>/terms/</code> namespace and <code>dc11:</code> to <code>/elements/1.1/</code>. You may see different prefixes used (for example, <code>/terms/</code> is sometimes <code>dcterms:</code> or just <code>terms:</code>), but the full namespace is what really matters as long as the prefix is defined somewhere.</p>
+<p>Let's go ahead and add a title and description to our <code>animals.owl</code> file. We'll do this using the <code>--annotation</code> option, which expects two arguments: (1) the CURIE of the annotation property, (2) the value of the annotation. The value of the annotation must be enclosed in double quotes if there are spaces. You can use any annotation property you want here, and include as many as you want! For now, we'll start with two:</p>
+<pre><code>robot annotate --input animals.owl \
+  --annotation dc11:title &quot;Animal Ontology&quot; \
+  --annotation dc11:description &quot;An ontology about animals&quot; \
+  --output animals.owl 
+</code></pre>
+<p><code>--annotation</code> adds these as strings, but remember that an annotation can also point to an link or IRI. We want our license to be a link, so we'll use <code>--link-annotation</code> instead to add that:</p>
+<pre><code>robot annotate --input animals.owl \
+  --link-annotation dc:license https://creativecommons.org/licenses/by/4.0/ \
+  --output animals.owl
+</code></pre>
+<p>OBO Foundry recommends using <a href="https://creativecommons.org">Creative Commons</a> for all licenses. We just gave our ontology the most permissive of these, <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY</a>.</p>
+<p>When you open <code>animals.owl</code> in Protégé again, you'll see these annotations added to the <strong>Active ontology</strong> tab. You can also click on the CC-BY link!</p>
+<hr />
+<h2 id="merge">Merge<a class="headerlink" href="#merge" title="Permanent link">&para;</a></h2>
+<p>We've already learned how to include external ontologies as imports. Usually, for the released version of an ontology, the imports are <em>merged in</em> so that all contents are in one file.</p>
+<p>Another reason you may want to merge two ontologies is if you're adding new terms to an ontology using <code>template</code>, like how we created new animal terms in <code>animals2.tsv</code> last time. We're going to demonstrate two methods of merging now. The first involves merging two (or more!) separate files and the second involves merging all imports into the current input ontology.</p>
+<h3 id="merging-multiple-files">Merging Multiple Files<a class="headerlink" href="#merging-multiple-files" title="Permanent link">&para;</a></h3>
+<p>First, copy <code>animals2.owl</code> to <code>animals-new.owl</code>. In Windows, this command is <code>copy animals2.owl animals-new.owl</code>. For Docker and other Linux operating systems, this is <code>cp animals2.owl animals-new.owl</code>. Open <code>animals-new.owl</code> in Protégé and remove the import we added last time. This is done in the <strong>Imported ontologies</strong> section of the <strong>Active ontology</strong> tab. Just click the X on the right side of the imported animals ontology. Don't forget to save!</p>
+<p>Continuing with the <code>animals.owl</code> file we created last week, now run the following command:</p>
+<pre><code>robot merge --input animals.owl --input animals-new.owl --output animals-full.owl
+</code></pre>
+<p>When you just import an external ontology into your ontology, you'll notice in the Protégé class hierarchy that all terms from the external ontology are a less-bold text than internal terms. This can be seen when you open <code>animals2.owl</code>, where we imported <code>animals.owl</code>. This is simply Protégé's way of telling us that these terms are not part of <em>your current ontology</em>. Now that we've merged these two ontologies together, when you open <code>animals-full.owl</code> in Protégé, you'll see that <em>all</em> the terms are bold.</p>
+<p>By default, the output ontology will get the ontology IRI of the first input ontology. We picked <code>animals.owl</code> as our first ontology here because this is the ontology that we're adding terms to, so we want our new output ontology to replace the original while keeping the same IRI. <code>merge</code> will also copy over all the ontology annotations from <code>animals.owl</code> (the first input) into the new file. The annotations from <code>animals2.owl</code> are ignored, but we'll talk more about this in our class session.</p>
+<p>If we were editing an ontology in the wild, we'd probably now replace the original with this new file using <code>cp</code> or <code>copy</code>. For now, don't replace <code>animals.owl</code> because we'll need it for this next part.</p>
+<p><em>IMPORTANT</em>: Be very careful to check that the format is the same if you're replacing a file! Remember, you can always output OWL Functional syntax or another syntax by ending your output with <code>.ofn</code>, for example: <code>--output animals-full.ofn</code>.</p>
+<h3 id="merging-imports">Merging Imports<a class="headerlink" href="#merging-imports" title="Permanent link">&para;</a></h3>
+<p>When we want to merge all our imports into our working ontology, we call this <em>collapsing the import closure</em>. Luckily (since we're lazy), you don't need to type out each of your imports as an input to do this.</p>
+<p>We already have <code>animals.owl</code> imported into <code>animals2.owl</code>. Let's collapse the import closure:</p>
+<pre><code>robot merge --input animals2.owl --collapse-import-closure true --output animals-full-2.owl
+</code></pre>
+<p>Even though we gave this a different file name, if you open <code>animals-full-2.owl</code> in Protégé, you'll notice that it's exactly the same as <code>animals-full.owl</code>! This is because we merged the same files together, just in a slightly different way. This time, though, the ontology IRI is the one for <code>animals2.owl</code>, not <code>animals.owl</code>. That is because that was our first input file.</p>
+<hr />
+<h2 id="reason">Reason<a class="headerlink" href="#reason" title="Permanent link">&para;</a></h2>
+<p>As we saw in the prepwork for Week 5, running a reasoner in Protégé creates an inferred class hierarchy. In the OBO Foundry, releases versions of ontologies usually have this inferred hierarchy <em>asserted</em>, so you see the full inferred hierarchy when you open the ontology without running the reasoner. ROBOT <code>reason</code> allows us to output a version of the ontology with these inferences asserted.</p>
+<p>As we discussed, ELK and HermiT are the two main reasoners you'll be using. Instead of using our example ontologies (the asserted and inferred hierarchies for these will look exactly the same), we're going to use another ontology from the <strong>Ontologies 101</strong> tutorial from week 5. Navigate back to that directory and then navigate to <code>BDK14_exercises/basic-classification</code>.</p>
+<p>Like running the reasoner in Protégé, running <code>reason</code> does three things:
+1. Check for inconsistency
+2. Check for unsatisfiable classes
+3. Assert the inferred class hierarchy</p>
+<p>Remember, when we run the reasoner in Protégé, if the ontology is inconsistent, <code>reason</code> will fail. If there are unsatisfiable classes, these will be asserted as <code>owl:Nothing</code>. ROBOT will always fail in both cases, but has some tools to help us figure out why. Let's introduce an unsatifiable class into our test and see what happens.</p>
+<p>First, let's make a copy of <code>ubiq-ligase-complex.owl</code> and call this new file <code>unreasoned.owl</code> (<code>copy</code> or <code>cp</code>).</p>
+<p>Open <code>unreasoned.owl</code> in Protégé and follow the steps below. These are things we've covered in past exercises, but if you get stuck, please don't hesitate to reach out.</p>
+<ol>
+<li>Find 'organelle' in the class hierarchy below 'cellular_component' (or just search for it by label)</li>
+<li>Make 'organelle' disjoint with 'organelle part' (either use the class hierarchy or type it in the expression editor)</li>
+<li>Find 'intracellular organelle part' below 'intracellular part' or 'organelle part' (or search for it by label)</li>
+<li>Add 'organelle' as a parent class to 'intracellular organelle part' (remember that you only need to include the single quotes if the label has spaces)</li>
+</ol>
+<p>Like we did in the <a href="https://ontology101tutorial.readthedocs.io/en/latest/Disjointness.html">Disjointness</a> part of the Ontologies 101 tutorial, we've made 'intracellular organelle part' a subclass of two classes that should have no overlap based on the disjointness axiom. Save the ontology and return to your terminal. Now, we'll run <code>reason</code>. The default reasoner is ELK, but you can specify the reasoner you want to use with the <code>--reasoner</code> option. For now, we'll just use ELK.</p>
+<pre><code>robot reason --input unreasoned.owl --output unsatisfiable.owl
+</code></pre>
+<p>You'll notice that ROBOT printed an error message telling us that the term with the IRI <code>http://purl.obolibrary.org/obo/GO_0044446</code> is unsatisfiable and ROBOT didn't create <code>unsatisfiable.owl</code>. This is ideal for automated pipelines where we don't want to be releasing unsatisfiable classes.</p>
+<p>We can still use ROBOT to investigate the issue, though. It already gave us the IRI, but we can get more details using the <code>--dump-unsatisfiable</code> option. We won't provide an output this time because we know it won't succeed.</p>
+<pre><code>robot reason --input unreasoned.owl --dump-unsatisfiable unsatisfiable.owl
+</code></pre>
+<p>You can open <code>unsatisfiable.owl</code> in Protégé and see that 'intracellular organelle part' is not the only term included, even though it was the only unsatisfiable class. Like with the SLME method of extraction, all the terms used in unsatisfiable class or classes logic are included in this unsatisfiable module. We can then use Protégé to dig a little deeper in this small module. This is especially useful when working with large ontologies and/or the HermiT reasoner, which both can take quite some time. By extracting a smaller module, we can run the reasoner again in Protégé to get detailed explanations. In this case, we already know the problem, so we don't need to investigate any more.</p>
+<p>Now let's reason over the original <code>ubiq-ligase-complex.owl</code> and see what happens:</p>
+<pre><code>robot reason --input ubiq-ligase-complex.owl --output reasoned.owl
+</code></pre>
+<p>If you just open <code>reasoned.owl</code> in Protégé, you won't really notice a different between this and the input file unless you do some digging. This takes us to our next command...</p>
+<hr />
+<h2 id="diff">Diff<a class="headerlink" href="#diff" title="Permanent link">&para;</a></h2>
+<p>The <code>diff</code> command can be used to compare the axioms in two ontologies to see what has been added and what has been removed. While the diffs on GitHub are useful for seeing what changed, it can be really tough for a human to read the raw OWL formats. Using ROBOT, we can output these diffs in a few different formats (using the <code>--format</code> option):
+- <code>plain</code>: plain text with just the added and removed axioms listed in OWL functional syntax (still tough for a human to read, but could be good for passing to other scripts)
+- <code>pretty</code>: similar to <code>plain</code>, but the IRIs are replaced with CURIEs and labels where available (still hard to read)
+- <code>html</code>: a nice, sharable HTML file with the diffs sorted by term
+- <code>markdown</code>: like the HTML diff, but in markdown for easy sharing on platforms like GitHub (perfect for pull requests!)</p>
+<p>We're going to generate an HTML diff of <code>ubiq-ligase-complex.owl</code> compared to the new <code>reasoned.owl</code> file to see what inferences have been asserted. <code>diff</code> takes a left ("original") and a right ("new") input to compare.</p>
+<pre><code>robot diff --left ubiq-ligase-complex.owl \
+  --right reasoned.owl \
+  --format html \
+  --output diff.html
+</code></pre>
+<p>Open <code>diff.html</code> in your browser side-by-side with <code>reasoned.owl</code> and you can see how the changes look in both.</p>
+<p><em>Homework question</em>: Running <code>reason</code> should assert inferences, yet there are some removed axioms in our diff. Why do you think these axioms were removed?</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

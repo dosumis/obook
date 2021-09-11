@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Ontology Pipelines with ROBOT - OBO Semantic Engineering Training</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Ontology Pipelines with ROBOT";
+    var mkdocs_page_input_path = "lesson/ontology_pipelines.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> OBO Semantic Engineering Training</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">About the course</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../getting_started/">Getting started with learning</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../contributing/">Contribe to the course</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="" href="../../cite.md">Table of contents</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Lessons</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../contributing_to_obo_ontologies/">Contributing to OBO ontologies</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Ontology Pipelines with ROBOT</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#prerequisites">Prerequisites</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#tutorials">Tutorials</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#what-is-delivered-as-part-of-the-course">What is delivered as part of the course</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#additional-materials-and-resources">Additional materials and resources</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#contributors">Contributors</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">How-to guides</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../howto/installing_elk_in_protege/">Installing ELK in Protege</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../howto/odk_setup/">Setting up the ODK</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">OBO Semantic Engineering Training</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Lessons &raquo;</li>
+        
+      
+    
+    <li>Ontology Pipelines with ROBOT</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="ontology-pipelines-with-robot-and-sparql">Ontology Pipelines with ROBOT and SPARQL<a class="headerlink" href="#ontology-pipelines-with-robot-and-sparql" title="Permanent link">&para;</a></h1>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="http://robot.obolibrary.org">Install ROBOT</a> so you can use it outside of Docker (scroll down to the end of the ROBOT page to find the Windows instructions)</li>
+<li><strong>Optional</strong> <a href="../../howto/odk_setup/">Install ODK</a>. The ODK includes ROBOT. In the more advanced parts of the course, you will need the ODK installed for some of the other dependencies it includes, and for Windows users it is often easier to follow the tutorials from inside the docker container rather than the Windows CMD.</li>
+<li>Familiarise yourself with the <a href="http://robot.obolibrary.org">ROBOT documentation</a>, to the point that you are aware of the various commands that exist.</li>
+</ul>
+<h2 id="tutorials">Tutorials<a class="headerlink" href="#tutorials" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Complete the <a href="../../tutorial/robot_tutorial_1/">ROBOT Mini-Tutorial 1</a> to learn your first ROBOT commands: <code>convert</code>, <code>extract</code> and <code>template</code></li>
+<li>Complete the <a href="../../tutorial/robot_tutorial_2/">ROBOT Mini-Tutorial 2</a> to learn about <code>annotate</code>, <code>merge</code>, <code>reason</code> and <code>diff</code></li>
+<li>Complete <a href="https://medium.com/virtuoso-blog/dbpedia-basic-queries-bc1ac172cc09">Running Basic SPARQL Queries</a> tutorial (~45 minutes - 1 hour)</li>
+</ul>
+<h2 id="what-is-delivered-as-part-of-the-course">What is delivered as part of the course<a class="headerlink" href="#what-is-delivered-as-part-of-the-course" title="Permanent link">&para;</a></h2>
+<p><strong>Description:</strong>  There are two basic ways to edit an ontology: (1) manually, using tools such as Protege, or (2) using computational tools such as ROBOT. Both have their advantages and disadvantages: manual curation is often more practical when the required ontology change follows a non-standard pattern, such as adding a textual definition or a synonym, while automated approaches are usually much more scalable (ensure that all axioms in the ontology are consistent, or that imported terms from external ontologies are up-to-date or that all labels start with a lower-case letter). Here, we will do a first dive into the "computational tools" side of the edit process. We strongly believe that the modern ontology curator should have a basic set of computational tools in their Semantic Engineering toolbox, and many of the lessons in this course should apply to this role of the <strong>modern ontology curator</strong>. <a href="http://robot.obolibrary.org/remove">ROBOT</a> is one of the most important tools in the Semantic Engineering Toolbox. For a bit more background on the tool, please refer to the <a href="https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-019-3002-3">paper</a>. We also recommend to get a basic familiarity with SPARQL, the query language of the semantic web, that can be a powerful combination with ROBOT to perform changes and quality control checks on your ontology.</p>
+<!--
+We will continue to combine our previous work into workflows for daily ontology development in OBO. First, we will learn a few more ROBOT commands to help us edit and release ontologies: [`merge`](http://robot.obolibrary.org/merge), [`reason`](http://robot.obolibrary.org/reason), and [`annotate`](http://robot.obolibrary.org/annotate). Then, we will get an introduction to [GNU Make](https://www.gnu.org/software/make/) and see how Makefiles are used for creating ontology releases. Finally, we will learn how to use the [Ontology Development Kit](https://github.com/INCATools/ontology-development-kit) (ODK) to start a new ontology and see how ROBOT and Makefiles are combined.
+
+By the end of this unit, you should be able to:
+- Find terms from other ontologies to reuse in your ontology
+- Extract those terms from the external ontology using ROBOT and import them into your ontology
+- Identify ontology design patterns for the logical definitions in your ontology
+- Create ROBOT templates using the ontology design patterns and use them to add to your ontology
+-->
+
+<h2 id="additional-materials-and-resources">Additional materials and resources<a class="headerlink" href="#additional-materials-and-resources" title="Permanent link">&para;</a></h2>
+<h2 id="contributors">Contributors<a class="headerlink" href="#contributors" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://orcid.org/0000-0003-4871-5569">Becky Jackson</a></li>
+<li><a href="https://orcid.org/0000-0002-7356-1779">Nico Matentzoglu</a></li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../howto/installing_elk_in_protege/" class="btn btn-neutral float-right" title="Installing ELK in Protege">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../contributing_to_obo_ontologies/" class="btn btn-neutral" title="Contributing to OBO ontologies"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../contributing_to_obo_ontologies/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../howto/installing_elk_in_protege/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
