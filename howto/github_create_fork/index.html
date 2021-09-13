@@ -1,204 +1,967 @@
-<!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  
-  
-  <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Creating an GitHub Fork - OBO Semantic Engineering Training</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
-  <link rel="stylesheet" href="../../css/theme.css" />
-  <link rel="stylesheet" href="../../css/theme_extra.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
-  
-  <script>
-    // Current page data
-    var mkdocs_page_name = "Creating an GitHub Fork";
-    var mkdocs_page_input_path = "howto/github_create_fork.md";
-    var mkdocs_page_url = null;
-  </script>
-  
-  <script src="../../js/jquery-2.1.1.min.js" defer></script>
-  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script> 
-</head>
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.6">
+    
+    
+      
+        <title>Creating an GitHub Fork - OBO Semantic Engineering Training</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.802231af.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
 
-<body class="wy-body-for-nav" role="document">
-
-  <div class="wy-grid-for-nav">
 
     
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
-    <div class="wy-side-scroll">
-      <div class="wy-side-nav-search">
-        <a href="../.." class="icon icon-home"> OBO Semantic Engineering Training</a>
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
-  </form>
-</div>
-      </div>
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#appendix" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="OBO Semantic Engineering Training" class="md-header__button md-logo" aria-label="OBO Semantic Engineering Training" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
 
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../..">About the course</a>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../getting_started/">Getting started with learning</a>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../overview/">Overview of lessons and tutorials</a>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../contributing/">Contribe to the course</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">Courses</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../tutorial/icbo2021/">ICBO 2021 Tutorial</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../courses/monarch-obo-training/">Monarch Ontology Training</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">Lessons</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../lesson/contributing_to_obo_ontologies/">Contributing to OBO ontologies</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../lesson/ontology_pipelines/">Ontology Pipelines with ROBOT</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../lesson/analysing_linked_data/">Analysing Linked Data</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../lesson/application_ontology_development/">Application Ontology Development</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../lesson/automating_ontology_workflows/">Automating Ontology Workflows</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../lesson/developing_an_obo_ontology/">Developing an OBO Ontology</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../lesson/developing_application_ontologies/">Developing an Application Ontology</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../lesson/ontology_design/">Ontology Design</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../lesson/ontology_development/">Ontology Development</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../lesson/ontology_fundamentals/">Ontology Fundamentals</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../lesson/ontology_term_use/">Ontology term use</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../lesson/rdf/">RDF</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../lesson/semantic_database_fundamentals/">Semantic Database Fundamentals</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../lesson/using_disease_and_phenotype_ontologies/">Disease and Phenotype Ontologies</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">Tutorials</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../tutorial/robot_tutorial_1/">ROBOT Mini-Tutorial 1 - Convert, Extract and Template</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../tutorial/robot_tutorial_2/">ROBOT Mini-Tutorial 2 - Annotate, Merge, Reason and Diff</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../tutorial/robot_tutorial_qc/">ROBOT Mini-Tutorial QC - Quality Control with report and query</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../tutorial/github_fundamentals/">GitHub Fundamentals for OBO Engineers</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../tutorial/github_issues/">GitHub Issue for OBO Engineers</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../tutorial/linking-data/">Linked Data Tutorial</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../tutorial/managing-dynamic-imports-odk/">ODK - Managing imports</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../tutorial/managing-ontology-releases-odk/">ODK - Managing ontology releases</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../tutorial/migrating-ontology-to-odk/">ODK - Migrating to ODK</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">How-to guides</span></p>
-                <ul class="current">
-                    <li class="toctree-l1"><a class="reference internal" href="../installing_elk_in_protege/">Installing ELK in Protege</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../odk_setup/">Setting up the ODK</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../clone_mondo_repo/">Clone the Mondo ontology repository</a>
-                    </li>
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Creating an GitHub Fork</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#create-a-fork-from-github">Create a fork from GitHub</a>
-    </li>
-    </ul>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../github_create_pull_request/">Creating an GitHub Pull Request</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../protege_browse_search/">Browsing and Searching Mondo</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">Reference</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../reference/github_desktop/">GitHub Desktop</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../reference/semantic_engineering_toolbox/">Semantic Engineering Toolbox</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../reference/tables-and-triples/">Tables and Triples</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../reference/reasoning/">Reasoning</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../reference/ontology-curator/">A day in the life of an ontology curator</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">OBOOK Editors</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../images/">How to add images</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../config/template/">New lesson template</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../teaching/case_studies/">Case studies for teaching</a>
-                    </li>
-                </ul>
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OBO Semantic Engineering Training
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Creating an GitHub Fork
+            
+          </span>
+        </div>
       </div>
     </div>
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../..">OBO Semantic Engineering Training</a>
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
       </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
 
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="OBO Semantic Engineering Training" class="md-nav__button md-logo" aria-label="OBO Semantic Engineering Training" data-md-component="logo">
       
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="breadcrumbs navigation">
-  <ul class="wy-breadcrumbs">
-    <li><a href="../..">Docs</a> &raquo;</li>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    OBO Semantic Engineering Training
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
     
       
-        
-          <li>How-to guides &raquo;</li>
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        About the course
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/" class="md-nav__link">
+        Getting started with learning
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../overview/" class="md-nav__link">
+        Overview of lessons and tutorials
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contributing/" class="md-nav__link">
+        Contribe to the course
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        Courses
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Courses" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Courses
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/icbo2021/" class="md-nav__link">
+        ICBO 2021 Tutorial
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../courses/monarch-obo-training/" class="md-nav__link">
+        Monarch Ontology Training
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      <label class="md-nav__link" for="__nav_6">
+        Lessons
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Lessons" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Lessons
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lesson/contributing_to_obo_ontologies/" class="md-nav__link">
+        Contributing to OBO ontologies
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lesson/ontology_pipelines/" class="md-nav__link">
+        Ontology Pipelines with ROBOT
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lesson/analysing_linked_data/" class="md-nav__link">
+        Analysing Linked Data
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lesson/application_ontology_development/" class="md-nav__link">
+        Application Ontology Development
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lesson/automating_ontology_workflows/" class="md-nav__link">
+        Automating Ontology Workflows
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lesson/developing_an_obo_ontology/" class="md-nav__link">
+        Developing an OBO Ontology
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lesson/developing_application_ontologies/" class="md-nav__link">
+        Developing an Application Ontology
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lesson/ontology_design/" class="md-nav__link">
+        Ontology Design
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lesson/ontology_development/" class="md-nav__link">
+        Ontology Development
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lesson/ontology_fundamentals/" class="md-nav__link">
+        Ontology Fundamentals
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lesson/ontology_term_use/" class="md-nav__link">
+        Ontology term use
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lesson/rdf/" class="md-nav__link">
+        RDF
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lesson/semantic_database_fundamentals/" class="md-nav__link">
+        Semantic Database Fundamentals
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lesson/using_disease_and_phenotype_ontologies/" class="md-nav__link">
+        Disease and Phenotype Ontologies
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      <label class="md-nav__link" for="__nav_7">
+        Tutorials
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Tutorials" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Tutorials
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/robot_tutorial_1/" class="md-nav__link">
+        ROBOT Mini-Tutorial 1 - Convert, Extract and Template
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/robot_tutorial_2/" class="md-nav__link">
+        ROBOT Mini-Tutorial 2 - Annotate, Merge, Reason and Diff
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/robot_tutorial_qc/" class="md-nav__link">
+        ROBOT Mini-Tutorial QC - Quality Control with report and query
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/github_fundamentals/" class="md-nav__link">
+        GitHub Fundamentals for OBO Engineers
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/github_issues/" class="md-nav__link">
+        GitHub Issue for OBO Engineers
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/linking-data/" class="md-nav__link">
+        Linked Data Tutorial
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/managing-dynamic-imports-odk/" class="md-nav__link">
+        ODK - Managing imports
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/managing-ontology-releases-odk/" class="md-nav__link">
+        ODK - Managing ontology releases
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/migrating-ontology-to-odk/" class="md-nav__link">
+        ODK - Migrating to ODK
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" checked>
+      
+      <label class="md-nav__link" for="__nav_8">
+        How-to guides
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="How-to guides" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          How-to guides
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installing_elk_in_protege/" class="md-nav__link">
+        Installing ELK in Protege
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../odk_setup/" class="md-nav__link">
+        Setting up the ODK
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../clone_mondo_repo/" class="md-nav__link">
+        Clone the Mondo ontology repository
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
         
       
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Creating an GitHub Fork
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Creating an GitHub Fork
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
     
-    <li>Creating an GitHub Fork</li>
-    <li class="wy-breadcrumbs-aside">
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-fork-from-github" class="md-nav__link">
+    Create a fork from GitHub
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
-  </ul>
   
-  <hr/>
-</div>
 
-          <div role="main">
-            <div class="section">
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../github_create_pull_request/" class="md-nav__link">
+        Creating an GitHub Pull Request
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../protege_browse_search/" class="md-nav__link">
+        Browsing and Searching Mondo
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      <label class="md-nav__link" for="__nav_9">
+        Reference
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Reference" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Reference
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/github_desktop/" class="md-nav__link">
+        GitHub Desktop
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/semantic_engineering_toolbox/" class="md-nav__link">
+        Semantic Engineering Toolbox
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/tables-and-triples/" class="md-nav__link">
+        Tables and Triples
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/reasoning/" class="md-nav__link">
+        Reasoning
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/ontology-curator/" class="md-nav__link">
+        A day in the life of an ontology curator
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
+      
+      <label class="md-nav__link" for="__nav_10">
+        OBOOK Editors
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="OBOOK Editors" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          OBOOK Editors
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../images/" class="md-nav__link">
+        How to add images
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../config/template/" class="md-nav__link">
+        New lesson template
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teaching/case_studies/" class="md-nav__link">
+        Case studies for teaching
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
               
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-fork-from-github" class="md-nav__link">
+    Create a fork from GitHub
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
                 <h1 id="appendix">Appendix<a class="headerlink" href="#appendix" title="Permanent link">&para;</a></h1>
 <h2 id="create-a-fork-from-github">Create a fork from GitHub<a class="headerlink" href="#create-a-fork-from-github" title="Permanent link">&para;</a></h2>
 <p>Note: Creating a fork allows you to create your copy  GitHub repository. This example provides instructions on forking the Mondo GitHub reposiitory. You can't break any of the Mondo files by editing your forked copy.</p>
@@ -236,58 +999,81 @@
 </li>
 </ol>
 <p><a href="https://docs.github.com/en/github/getting-started-with-github/fork-a-repo">Further instructions on forking a repo</a></p>
+                
               
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../clone_mondo_repo/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Clone the Mondo ontology repository" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Clone the Mondo ontology repository
             </div>
           </div>
-          <footer>
+        </a>
+      
+      
+        
+        <a href="../github_create_pull_request/" class="md-footer__link md-footer__link--next" aria-label="Next: Creating an GitHub Pull Request" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Creating an GitHub Pull Request
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../github_create_pull_request/" class="btn btn-neutral float-right" title="Creating an GitHub Pull Request">Next <span class="icon icon-circle-arrow-right"></span></a>
-      
-      
-        <a href="../clone_mondo_repo/" class="btn btn-neutral" title="Clone the Mondo ontology repository"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
       
     </div>
-  
-
-  <hr/>
-
-  <div role="contentinfo">
-    <!-- Copyright etc -->
-    
   </div>
-
-  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
       
-        </div>
-      </div>
-
-    </section>
-
-  </div>
-
-  <div class="rst-versions" role="note" aria-label="versions">
-  <span class="rst-current-version" data-toggle="rst-current-version">
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.409db549.min.js", "version": null}</script>
     
     
-      <span><a href="../clone_mondo_repo/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <script src="../../assets/javascripts/bundle.756773cc.min.js"></script>
+      
     
-    
-      <span><a href="../github_create_pull_request/" style="color: #fcfcfc">Next &raquo;</a></span>
-    
-  </span>
-</div>
-    <script>var base_url = '../..';</script>
-    <script src="../../js/theme_extra.js" defer></script>
-    <script src="../../js/theme.js" defer></script>
-      <script src="../../search/main.js" defer></script>
-    <script defer>
-        window.onload = function () {
-            SphinxRtdTheme.Navigation.enable(true);
-        };
-    </script>
-
-</body>
+  </body>
 </html>
