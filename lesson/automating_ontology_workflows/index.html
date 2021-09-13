@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Automating Ontology Development Workflows: Make, Shell and Automation Thinking - OBO Semantic Engineering Training</title>
+  <title>Automating Ontology Workflows - OBO Semantic Engineering Training</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../../css/theme.css" />
@@ -18,7 +18,7 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Automating Ontology Development Workflows: Make, Shell and Automation Thinking";
+    var mkdocs_page_name = "Automating Ontology Workflows";
     var mkdocs_page_input_path = "lesson/automating_ontology_workflows.md";
     var mkdocs_page_url = null;
   </script>
@@ -62,18 +62,94 @@
                     <li class="toctree-l1"><a class="reference internal" href="../../contributing/">Contribe to the course</a>
                     </li>
                 </ul>
-                <p class="caption"><span class="caption-text">Lessons</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../contributing_to_obo_ontologies/">Contributing to OBO ontologies</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../ontology_pipelines/">Ontology Pipelines with ROBOT</a>
-                    </li>
-                </ul>
                 <p class="caption"><span class="caption-text">Courses</span></p>
                 <ul>
                     <li class="toctree-l1"><a class="reference internal" href="../../tutorial/icbo2021/">ICBO 2021 Tutorial</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../courses/monarch-obo-training/">Monarch Ontology Training</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Lessons</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../contributing_to_obo_ontologies/">Contributing to OBO ontologies</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../ontology_pipelines/">Ontology Pipelines with ROBOT</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../analysing_linked_data/">Analysing Linked Data</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../application_ontology_development/">Application Ontology Development</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Automating Ontology Workflows</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#warning">Warning</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#prerequisites">Prerequisites</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#what-is-delivered-as-part-of-the-course">What is delivered as part of the course</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#learning-objectives">Learning objectives</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#preparation">Preparation</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#tutorials">Tutorials</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#thinking-automation">Thinking "Automation"</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#the-basics">The Basics</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#examples-of-automation">Examples of Automation</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#software-automation-is-special">Software Automation is Special</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#the-dangers-of-automation">The Dangers of Automation</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#a-spectrum-of-automation">A Spectrum of Automation</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#conclusion">Conclusion</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#scientific-computing-an-overview">Scientific Computing: An Overview</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#make-space">Make Space</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#firm-foundations">Firm Foundations</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#one-way-data-flow">One-Way Data Flow</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#plan-for-change">Plan for Change</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#test-from-the-start">Test from the Start</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#documentation-is-also-for-you">Documentation is also for You</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#additional-materials-and-resources">Additional materials and resources</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#contributors">Contributors</a>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../developing_an_obo_ontology/">Developing an OBO Ontology</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../developing_application_ontologies/">Developing an Application Ontology</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../ontology_design/">Ontology Design</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../ontology_development/">Ontology Development</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../ontology_fundamentals/">Ontology Fundamentals</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../ontology_term_use/">Ontology term use</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../rdf/">RDF</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../semantic_database_fundamentals/">Semantic Database Fundamentals</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../using_disease_and_phenotype_ontologies/">Disease and Phenotype Ontologies</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Tutorials</span></p>
@@ -83,6 +159,18 @@
                     <li class="toctree-l1"><a class="reference internal" href="../../tutorial/robot_tutorial_2/">ROBOT Mini-Tutorial 2 - Annotate, Merge, Reason and Diff</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../tutorial/robot_tutorial_qc/">ROBOT Mini-Tutorial QC - Quality Control with report and query</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../tutorial/github_fundamentals/">GitHub Fundamentals for OBO Engineers</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../tutorial/github_issues/">GitHub Issue for OBO Engineers</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../tutorial/linking-data/">Linked Data Tutorial</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../tutorial/managing-dynamic-imports-odk/">ODK - Managing imports</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../tutorial/managing-ontology-releases-odk/">ODK - Managing ontology releases</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../tutorial/migrating-ontology-to-odk/">ODK - Migrating to ODK</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">How-to guides</span></p>
@@ -96,6 +184,30 @@
                     <li class="toctree-l1"><a class="reference internal" href="../../howto/github_create_fork/">Creating an GitHub Fork</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../howto/github_create_pull_request/">Creating an GitHub Pull Request</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../howto/protege_browse_search/">Browsing and Searching Mondo</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Reference</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../reference/github_desktop/">GitHub Desktop</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../reference/semantic_engineering_toolbox/">Semantic Engineering Toolbox</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../reference/tables-and-triples/">Tables and Triples</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../reference/reasoning/">Reasoning</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../reference/ontology-curator/">A day in the life of an ontology curator</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">OBOOK Editors</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../images/">How to add images</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../config/template/">New lesson template</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../teaching/case_studies/">Case studies for teaching</a>
                     </li>
                 </ul>
       </div>
@@ -118,8 +230,12 @@
     <li><a href="../..">Docs</a> &raquo;</li>
     
       
+        
+          <li>Lessons &raquo;</li>
+        
+      
     
-    <li>Automating Ontology Development Workflows: Make, Shell and Automation Thinking</li>
+    <li>Automating Ontology Workflows</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -132,6 +248,8 @@
             <div class="section">
               
                 <h1 id="automating-ontology-development-workflows-make-shell-and-automation-thinking">Automating Ontology Development Workflows: Make, Shell and Automation Thinking<a class="headerlink" href="#automating-ontology-development-workflows-make-shell-and-automation-thinking" title="Permanent link">&para;</a></h1>
+<h3 id="warning">Warning<a class="headerlink" href="#warning" title="Permanent link">&para;</a></h3>
+<p>These materials are under construction and incomplete.</p>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Ontology Pipelines</li>
@@ -978,6 +1096,15 @@ These could both go in the README of a small project.</p>
           </div>
           <footer>
   
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../developing_an_obo_ontology/" class="btn btn-neutral float-right" title="Developing an OBO Ontology">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../application_ontology_development/" class="btn btn-neutral" title="Application Ontology Development"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
 
   <hr/>
 
@@ -1000,6 +1127,10 @@ These could both go in the README of a small project.</p>
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
+      <span><a href="../application_ontology_development/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../developing_an_obo_ontology/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
