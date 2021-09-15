@@ -1006,18 +1006,21 @@
 <p><strong>Templating systems</strong>
 - <a href="https://incatools.github.io/dead_simple_owl_design_patterns/">DOSDP</a>
 - <a href="http://robot.obolibrary.org/template">ROBOT template</a></p>
-<p><strong>Where to find terms: Term browsers</strong>
- - <a href="https://www.ebi.ac.uk/ols/index">OLS</a>: The boss of the current term browsers out there. While the code base is a bit dated, it still gives access to a wide range of relevant open biomedical ontology terms. Note, while being a bit painful, it is possible to <a href="https://github.com/EBISPOT/ontotools-docker-config">set up your own OLS</a> (for your organisation) which only contains those terms/ontologies that are relevant for your work.
- - <a href="http://www.ontobee.org/">Ontobee</a>: The default term browser for OBO term purls. For example, click on http://purl.obolibrary.org/obo/OBI_0000070. This will redirect you directly to Ontobee, to show you the terms location in the hierarchy. In practice, there is no particular reason why you would favour Ontobee over OLS for example - I just sometimes prefer the way Ontobee presents annotations and "uses" by other ontologies, so I use both.
- - <a href="http://aber-owl.net/#/">AberOWL</a>: Another ontology repository and semantic search engine. Some ontologies such as <a href="http://aber-owl.net/ontology/PhenomeNET/">PhenomeNet</a> can only be found on AberOWL, however, I personally prefer OLS.
- - <a href="https://identifiers.org/">identifiers.org</a>: A centralised registry for identifiers used in the life sciences. This is one of the tools that bridge the gap between CURIEs and URLs, but it does not cover (OBO) ontologies very well, and if so, is not aware of the proper URI prefixes (see for example <a href="https://identifiers.org/resolve?query=HP:0000001">here</a>, and HP term resolution that does not list the proper persistent URL of the HP identifier (http://purl.obolibrary.org/obo/HP_0000001)). Identifiers.org has mainly good coverage for databases/resources that use CURIE type identifiers. But: you can enter any ID you find in your data and it will tell you what it is associated with.**</p>
-<p><strong>Where to find ontologies: Ontology repositories</strong>
-- <a href="http://obofoundry.org/">OBO Foundry Ontology Library</a>
-- <a href="https://bioportal.bioontology.org/">BioPortal</a>
-   - <a href="https://www.bioontology.org/why-bioportal-no-longer-offers-the-current-procedural-terminology-cpt/">CPT Story</a>. The Current Procedural Terminology was the by far most highly accessed Terminology on Bioportal - for many years. Due to license concerns, it had to be withdrawn from the repository. This story serves a cautionary tale of using terminologies with non-open or non-transparent licensing schemes.
-- <a href="http://agroportal.lirmm.fr/">AgroPortal</a>: Like BioPortal, but focussed on the Agronomy domain.
-- <a href="https://lov.linkeddata.es/dataset/lov/">Linked Open Data Vocabularies (LOV)</a>: Lists the most important vocabularies in the Linked Data space, such as <a href="https://dublincore.org/">Dublin Core</a>, <a href="https://www.w3.org/TR/skos-reference/">SKOS</a> and <a href="http://xmlns.com/foaf/spec/">Friend-of-a-Friend</a> (FOAF).
-- </p>
+<p><strong>Where to find terms: Term browsers</strong></p>
+<ul>
+<li><a href="https://www.ebi.ac.uk/ols/index">OLS</a>: The boss of the current term browsers out there. While the code base is a bit dated, it still gives access to a wide range of relevant open biomedical ontology terms. Note, while being a bit painful, it is possible to <a href="https://github.com/EBISPOT/ontotools-docker-config">set up your own OLS</a> (for your organisation) which only contains those terms/ontologies that are relevant for your work.</li>
+<li><a href="http://www.ontobee.org/">Ontobee</a>: The default term browser for OBO term purls. For example, click on http://purl.obolibrary.org/obo/OBI_0000070. This will redirect you directly to Ontobee, to show you the terms location in the hierarchy. In practice, there is no particular reason why you would favour Ontobee over OLS for example - I just sometimes prefer the way Ontobee presents annotations and "uses" by other ontologies, so I use both.</li>
+<li><a href="http://aber-owl.net/#/">AberOWL</a>: Another ontology repository and semantic search engine. Some ontologies such as <a href="http://aber-owl.net/ontology/PhenomeNET/">PhenomeNet</a> can only be found on AberOWL, however, I personally prefer OLS.</li>
+<li><a href="https://identifiers.org/">identifiers.org</a>: A centralised registry for identifiers used in the life sciences. This is one of the tools that bridge the gap between CURIEs and URLs, but it does not cover (OBO) ontologies very well, and if so, is not aware of the proper URI prefixes (see for example <a href="https://identifiers.org/resolve?query=HP:0000001">here</a>, and HP term resolution that does not list the proper persistent URL of the HP identifier (http://purl.obolibrary.org/obo/HP_0000001)). Identifiers.org has mainly good coverage for databases/resources that use CURIE type identifiers. But: you can enter any ID you find in your data and it will tell you what it is associated with.</li>
+</ul>
+<p><strong>Where to find ontologies: Ontology repositories</strong></p>
+<ul>
+<li><a href="http://obofoundry.org/">OBO Foundry Ontology Library</a></li>
+<li><a href="https://bioportal.bioontology.org/">BioPortal</a></li>
+<li><a href="https://www.bioontology.org/why-bioportal-no-longer-offers-the-current-procedural-terminology-cpt/">CPT Story</a>. The Current Procedural Terminology was the by far most highly accessed Terminology on Bioportal - for many years. Due to license concerns, it had to be withdrawn from the repository. This story serves a cautionary tale of using terminologies with non-open or non-transparent licensing schemes.</li>
+<li><a href="http://agroportal.lirmm.fr/">AgroPortal</a>: Like BioPortal, but focussed on the Agronomy domain.</li>
+<li><a href="https://lov.linkeddata.es/dataset/lov/">Linked Open Data Vocabularies (LOV)</a>: Lists the most important vocabularies in the Linked Data space, such as <a href="https://dublincore.org/">Dublin Core</a>, <a href="https://www.w3.org/TR/skos-reference/">SKOS</a> and <a href="http://xmlns.com/foaf/spec/">Friend-of-a-Friend</a> (FOAF). </li>
+</ul>
 <h3 id="nicos-top-10-tools-for-the-semantic-obo-engineers-toolbox">Nico's top 10 tools for the Semantic OBO Engineer's Toolbox<a class="headerlink" href="#nicos-top-10-tools-for-the-semantic-obo-engineers-toolbox" title="Permanent link">&para;</a></h3>
 <ol>
 <li><a href="http://robot.obolibrary.org">ROBOT</a></li>
