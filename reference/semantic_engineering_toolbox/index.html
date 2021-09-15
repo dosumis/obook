@@ -61,7 +61,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#semantic-engineering-toolbox" class="md-skip">
+        <a href="#semantic-obo-engineering-toolbox" class="md-skip">
           Skip to content
         </a>
       
@@ -771,9 +771,52 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Semantic Engineering Toolbox
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Semantic Engineering Toolbox
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#nicos-top-10-tools-for-the-semantic-obo-engineers-toolbox" class="md-nav__link">
+    Nico's top 10 tools for the Semantic OBO Engineer's Toolbox
+  </a>
+  
+    <nav class="md-nav" aria-label="Nico's top 10 tools for the Semantic OBO Engineer's Toolbox">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#extra-stuff" class="md-nav__link">
+    Extra stuff..
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -906,6 +949,34 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#nicos-top-10-tools-for-the-semantic-obo-engineers-toolbox" class="md-nav__link">
+    Nico's top 10 tools for the Semantic OBO Engineer's Toolbox
+  </a>
+  
+    <nav class="md-nav" aria-label="Nico's top 10 tools for the Semantic OBO Engineer's Toolbox">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#extra-stuff" class="md-nav__link">
+    Extra stuff..
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -917,20 +988,54 @@
               
                 
                 
-                <h1 id="semantic-engineering-toolbox">Semantic Engineering Toolbox<a class="headerlink" href="#semantic-engineering-toolbox" title="Permanent link">&para;</a></h1>
+                <h1 id="semantic-obo-engineering-toolbox">Semantic OBO Engineering Toolbox<a class="headerlink" href="#semantic-obo-engineering-toolbox" title="Permanent link">&para;</a></h1>
 <ul>
-<li>Protégé (continued)</li>
+<li><a href="https://protege.stanford.edu/">Protégé</a></li>
 <li><a href="https://protegewiki.stanford.edu/wiki/DLQueryTab">DL Query Tab</a></li>
 <li><a href="http://robot.obolibrary.org">ROBOT</a></li>
 <li><a href="https://www.gnu.org/software/make/">GNU Make</a></li>
-<li><a href="https://github.com/INCATools/ontology-development-kit">Ontology Development Kit</a></li>
+<li><a href="https://github.com/INCATools/ontology-development-kit">Ontology Development Kit (ODK)</a></li>
 </ul>
 <p><strong>Text editors:</strong>
 - <a href="https://kakoune.org/">Kakoune</a> text/code editor
 - <a href="https://www.sublimetext.com/">Sublime</a>
 - <a href="https://atom.io/">Atom</a></p>
 <p><strong>SPARQL query tool:</strong>
-- <a href="https://yasgui.triply.cc/#">Yasgui</a> </p>
+- <a href="https://yasgui.triply.cc/#">Yasgui</a> 
+- <a href="http://robot.obolibrary.org/query">ROBOT query</a></p>
+<p><strong>Templating systems</strong>
+- <a href="https://incatools.github.io/dead_simple_owl_design_patterns/">DOSDP</a>
+- <a href="http://robot.obolibrary.org/template">ROBOT template</a></p>
+<p><strong>Where to find terms: Term browsers</strong>
+ - <a href="https://www.ebi.ac.uk/ols/index">OLS</a>: The boss of the current term browsers out there. While the code base is a bit dated, it still gives access to a wide range of relevant open biomedical ontology terms. Note, while being a bit painful, it is possible to <a href="https://github.com/EBISPOT/ontotools-docker-config">set up your own OLS</a> (for your organisation) which only contains those terms/ontologies that are relevant for your work.
+ - <a href="http://www.ontobee.org/">Ontobee</a>: The default term browser for OBO term purls. For example, click on http://purl.obolibrary.org/obo/OBI_0000070. This will redirect you directly to Ontobee, to show you the terms location in the hierarchy. In practice, there is no particular reason why you would favour Ontobee over OLS for example - I just sometimes prefer the way Ontobee presents annotations and "uses" by other ontologies, so I use both.
+ - <a href="http://aber-owl.net/#/">AberOWL</a>: Another ontology repository and semantic search engine. Some ontologies such as <a href="http://aber-owl.net/ontology/PhenomeNET/">PhenomeNet</a> can only be found on AberOWL, however, I personally prefer OLS.
+ - <a href="https://identifiers.org/">identifiers.org</a>: A centralised registry for identifiers used in the life sciences. This is one of the tools that bridge the gap between CURIEs and URLs, but it does not cover (OBO) ontologies very well, and if so, is not aware of the proper URI prefixes (see for example <a href="https://identifiers.org/resolve?query=HP:0000001">here</a>, and HP term resolution that does not list the proper persistent URL of the HP identifier (http://purl.obolibrary.org/obo/HP_0000001)). Identifiers.org has mainly good coverage for databases/resources that use CURIE type identifiers. But: you can enter any ID you find in your data and it will tell you what it is associated with.**</p>
+<p><strong>Where to find ontologies: Ontology repositories</strong>
+- <a href="http://obofoundry.org/">OBO Foundry Ontology Library</a>
+- <a href="https://bioportal.bioontology.org/">BioPortal</a>
+   - <a href="https://www.bioontology.org/why-bioportal-no-longer-offers-the-current-procedural-terminology-cpt/">CPT Story</a>. The Current Procedural Terminology was the by far most highly accessed Terminology on Bioportal - for many years. Due to license concerns, it had to be withdrawn from the repository. This story serves a cautionary tale of using terminologies with non-open or non-transparent licensing schemes.
+- <a href="http://agroportal.lirmm.fr/">AgroPortal</a>: Like BioPortal, but focussed on the Agronomy domain.
+- <a href="https://lov.linkeddata.es/dataset/lov/">Linked Open Data Vocabularies (LOV)</a>: Lists the most important vocabularies in the Linked Data space, such as <a href="https://dublincore.org/">Dublin Core</a>, <a href="https://www.w3.org/TR/skos-reference/">SKOS</a> and <a href="http://xmlns.com/foaf/spec/">Friend-of-a-Friend</a> (FOAF).
+- </p>
+<h3 id="nicos-top-10-tools-for-the-semantic-obo-engineers-toolbox">Nico's top 10 tools for the Semantic OBO Engineer's Toolbox<a class="headerlink" href="#nicos-top-10-tools-for-the-semantic-obo-engineers-toolbox" title="Permanent link">&para;</a></h3>
+<ol>
+<li><a href="http://robot.obolibrary.org">ROBOT</a></li>
+<li><a href="https://protege.stanford.edu/">Protégé</a></li>
+<li>Term browsers (<a href="https://www.ebi.ac.uk/ols/index">OLS</a>, <a href="http://www.ontobee.org/">Ontobee</a>)</li>
+<li><a href="https://github.com/INCATools/ontology-development-kit">Ontology Development Kit (ODK)</a></li>
+<li>SPARQL (e.g. <a href="http://robot.obolibrary.org/query">ROBOT query</a> and <a href="https://yasgui.triply.cc/#">Yasgui</a>)</li>
+<li><a href="https://www.gnu.org/software/make/">GNU Make</a></li>
+<li>Text editor workflows (i.e. <a href="https://atom.io/">Atom</a>, Sublime, VIM)</li>
+<li>Basic Shell scripting and pipelining</li>
+<li>From tables to ontologies: <a href="https://incatools.github.io/dead_simple_owl_design_patterns/">DOSDP templates</a> and <a href="http://robot.obolibrary.org/template">ROBOT templates</a></li>
+<li><a href="https://docs.github.com/en/actions">GitHub Actions</a></li>
+</ol>
+<h4 id="extra-stuff">Extra stuff..<a class="headerlink" href="#extra-stuff" title="Permanent link">&para;</a></h4>
+<p>Less essential, but still awesomely useful:
+- <a href="https://github.com/ontodev/cogs">Cogs</a> (experimental) for automatically syncronising your spreadsheets with Google Sheets.
+- Basic Dockerfile development: This can help you automate processes that go beyond usual ODK day-to-day businesss, such as automated mapping tools, graph machine learning, NLP etc.
+- <a href="https://github.com/">GitHub</a> community management and git version control: </p>
                 
               
               
