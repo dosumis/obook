@@ -221,7 +221,7 @@
   
     <li class="md-nav__item">
       <a href="../../contributing/" class="md-nav__link">
-        Contribe to the course
+        Contribute to the course
       </a>
     </li>
   
@@ -1108,12 +1108,12 @@
 <p>Before starting this tutorial, either:
 * make sure Docker is running and you are in the container
 * <a href="http://robot.obolibrary.org/">download and install ROBOT</a> for your operating system</p>
-<p>To start, we will be working in the same folder as the first ROBOT Mini-Tutorial (this may be the <code>06-Ontology-Development</code> folder). Navigate to this folder in your terminal and list the contents of the current directory by running <code>ls</code>. You should see <code>catalog-v001.xml</code> listed as one of these files. We want to delete this so that we can fix the ontology IRI problem we ran into last week! Before going any further with this tutorial, do this by running either <code>del catalog-v001.xml</code> for Windows or <code>rm catalog-v001.xml</code> if you're using Docker, MacOS, or other Linux system.</p>
+<p>To start, we will be working in the same folder as the first <a href="../robot_tutorial_1/">ROBOT Mini-Tutorial</a>. Navigate to this folder in your terminal and list the contents of the current directory by running <code>ls</code>. You should see <code>catalog-v001.xml</code> listed as one of these files. We want to delete this so that we can fix the ontology IRI problem we ran into last week! Before going any further with this tutorial, do this by running either <code>del catalog-v001.xml</code> for Windows or <code>rm catalog-v001.xml</code> if you're using Docker, MacOS, or other Linux system.</p>
 <hr />
 <h2 id="annotate">Annotate<a class="headerlink" href="#annotate" title="Permanent link">&para;</a></h2>
 <p>The <code>annotate</code> command allows you to attach metadata to your ontology in the form of IRIs and ontology annotations. Like the annotations on a term, ontology annotations help users to understand how they can use the ontology.</p>
 <h3 id="ontology-iris">Ontology IRIs<a class="headerlink" href="#ontology-iris" title="Permanent link">&para;</a></h3>
-<p>As we discussed during week 6, ontology IRIs are very important! We saw how importing an ontology without an IRI into another ontology without an IRI can cause some problems in the <code>catalog-v001.xml</code> file. We're going to fix that problem by giving IRIs to both our <code>animals.owl</code> and <code>animals2.owl</code> files.</p>
+<p>As we discussed during previous parts of the course, ontology IRIs are very important! We saw how importing an ontology without an IRI into another ontology without an IRI can cause some problems in the <code>catalog-v001.xml</code> file. We're going to fix that problem by giving IRIs to both our <code>animals.owl</code> and <code>animals2.owl</code> files.</p>
 <p>Let's start with <code>animals.owl</code>:</p>
 <pre><code>robot annotate --input animals.owl \
   --ontology-iri http://example.com/animals.owl \
@@ -1123,7 +1123,7 @@
 <p>On your own, give <code>animals2.owl</code> the ontology IRI <code>http://example.com/animals2.owl</code>. Remember that, in reality, we always want our ontology IRIs to be <em>resolvable</em>, so these would be pretty bad IRIs for an actual ontology.</p>
 <p>Let's fix our import statement now. Open <code>animals2.owl</code> in Protégé and go to the <strong>Entities</strong> tab. You'll see that even though we still have the import statement in the <strong>Active ontology</strong> tab, the top-level terms are no longer labeled. Since we changed the ontology IRI, Protégé can no longer resolve our local file (because the <code>catalog-v001.xml</code> file was not updated). Go back to the <strong>Active ontology</strong> tab and click the X to the right of our original import. Then, re-add <code>animals.owl</code> as an import using the same steps as last time. When you return to the <strong>Entities</strong> tab, you'll once again see the labels of the top-level terms.</p>
 <h3 id="version-iris">Version IRIs<a class="headerlink" href="#version-iris" title="Permanent link">&para;</a></h3>
-<p>When we release our ontologies, we want to make sure to include a version IRI. Like the onology IRI, this should always resolve to the version of the ontology at the time of the release. For clarity, we usually use dates in our version IRIs in the OBO Foundry. That way, you know when you navigate to a specific version IRI, that's what the ontology looked like on that date. (Note: edit files don't usually have version IRIs as they are always changing, and we don't expect to be able to point to a stable version)</p>
+<p>When we release our ontologies, we want to make sure to include a version IRI. Like the ontology IRI, this should always resolve to the version of the ontology at the time of the release. For clarity, we usually use dates in our version IRIs in the OBO Foundry. That way, you know when you navigate to a specific version IRI, that's what the ontology looked like on that date. (Note: edit files don't usually have version IRIs as they are always changing, and we don't expect to be able to point to a stable version)</p>
 <p>While you can add a version IRI in Protégé, if you're trying to create an automated release workflow, this is a manual step you don't want to have to include. Keeping it in your release workflow also makes sure that the verion IRIs are consistent (we'll see how to do this with <code>make</code> later). For now, let's add a version IRI to <code>animals.owl</code> (feel free to replace the <code>2021-05-20</code> with today's date):</p>
 <pre><code>robot annotate --input animals.owl \
   --version-iri http://example.com/animals/2021-05-20/animals.owl \
@@ -1137,7 +1137,7 @@
 * License (<code>dc:license</code>)
 * Description (<code>dc11:description</code>)</p>
 <p>These three annotation properties all come from the <a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/">Dublin Core</a>, but they have slightly different namespaces. This is because DC is split into two parts: the <code>/terms/</code> and <code>/elements/1.1/</code> namespaces. Just remember to double check that you're using the correct namespace. If you click on the DC link, you can find the complete list of DC terms in their respective namespaces.</p>
-<p>ROBOT contains some built-in prefixes, which can be found <a href="https://github.com/ontodev/robot/blob/master/robot-core/src/main/resources/obo_context.jsonld">here</a>. the prefix <code>dc:</code> corresponds to the <code>/terms/</code> namespace and <code>dc11:</code> to <code>/elements/1.1/</code>. You may see different prefixes used (for example, <code>/terms/</code> is sometimes <code>dcterms:</code> or just <code>terms:</code>), but the full namespace is what really matters as long as the prefix is defined somewhere.</p>
+<p>ROBOT contains some built-in prefixes, which can be found <a href="https://github.com/ontodev/robot/blob/master/robot-core/src/main/resources/obo_context.jsonld">here</a>. The prefix <code>dc:</code> corresponds to the <code>/terms/</code> namespace and <code>dc11:</code> to <code>/elements/1.1/</code>. You may see different prefixes used (for example, <code>/terms/</code> is sometimes <code>dcterms:</code> or just <code>terms:</code>), but the full namespace is what really matters as long as the prefix is defined somewhere.</p>
 <p>Let's go ahead and add a title and description to our <code>animals.owl</code> file. We'll do this using the <code>--annotation</code> option, which expects two arguments: (1) the CURIE of the annotation property, (2) the value of the annotation. The value of the annotation must be enclosed in double quotes if there are spaces. You can use any annotation property you want here, and include as many as you want! For now, we'll start with two:</p>
 <pre><code>robot annotate --input animals.owl \
   --annotation dc11:title &quot;Animal Ontology&quot; \

@@ -221,7 +221,7 @@
   
     <li class="md-nav__item">
       <a href="../../contributing/" class="md-nav__link">
-        Contribe to the course
+        Contribute to the course
       </a>
     </li>
   
@@ -1118,7 +1118,7 @@
 <p>Before starting this tutorial, either:
 * make sure Docker is running and you are in the container
 * <a href="http://robot.obolibrary.org/">download and install ROBOT</a> for your operating system</p>
-<p>We will be using the files from the <a href="https://github.com/OHSUBD2K/BDK14-Ontologies-101">Ontologies 101 Tutorial</a> that we started last week.
+<p>We will be using the files from the <a href="https://github.com/OHSUBD2K/BDK14-Ontologies-101">Ontologies 101 Tutorial</a>.
 In your terminal, navigate to the repository that you cloned and then into the <code>BDK14_exercises</code> folder.</p>
 <h2 id="convert">Convert<a class="headerlink" href="#convert" title="Permanent link">&para;</a></h2>
 <p>So far, we have been saving our ontologies in Protege using the default RDF/XML syntax, but there are many flavors of OWL.
@@ -1130,7 +1130,7 @@ We will discuss each of these serializations in more detail during the class ses
 <li>obo - OBO Format</li>
 <li>ofn - OWL Functional</li>
 <li>omn - OWL Manchester</li>
-<li>json</li>
+<li>json - obographs JSON</li>
 </ul>
 <h3 id="lets-try-it">Let's Try It!<a class="headerlink" href="#lets-try-it" title="Permanent link">&para;</a></h3>
 <p>Navigate to the <code>basic-subclass/</code> folder. Open <code>chromosome-parts.owl</code> in your text editor and you will see it's in RDF/XML format.
@@ -1196,7 +1196,7 @@ Essentially, the first row of a ROBOT template is a human-readable header. The s
 Each row below that represents an entity to be created in the output ontology. We can create new entities by giving them new IDs, but we can also reference existing entities just by label.
 For now, we're going to create a new, small ontology with new terms using a template.</p>
 <h3 id="lets-try-it_2">Let's Try It!<a class="headerlink" href="#lets-try-it_2" title="Permanent link">&para;</a></h3>
-<p>Download (or copy/paste) the <a href="https://github.com/jamesaoverton/obook/blob/master/06-OntologyDesign/animals.tsv">animals.tsv</a> file and move it to the <code>basic-subclass/</code> folder (or whatever folder you would like to work in; we will not be using any of the Ontology 101 files anymore).
+<p>Download (or copy/paste) the <a href="animals.tsv">animals.tsv</a> file and move it to the <code>basic-subclass/</code> folder (or whatever folder you would like to work in; we will not be using any of the Ontology 101 files anymore).
 This contains the following data:</p>
 <table>
 <thead>
@@ -1245,7 +1245,7 @@ Finally, the last column begins with <code>A</code> to denote that this will be 
 </code></pre>
 <p>Note that in this command, we don't use the <code>--input</code> parameter. That parameter is reserved for input ontologies, and we are not using one right now. More on this later.</p>
 <p>Open <code>animals.owl</code> in Protege, and you'll be able to see the class hierarchy we defined in the template as an actual structure.</p>
-<p>Now let's make another small ontology that reuses some terms from our <code>animals.owl</code> file. Download (or copy/paste) <a href=""><code>animals2.tsv</code></a> into the same folder.
+<p>Now let's make another small ontology that reuses some terms from our <code>animals.owl</code> file. Download (or copy/paste) <a href="animals2.tsv">animals2.tsv</a> into the same folder.
 This contains the following:</p>
 <table>
 <thead>
