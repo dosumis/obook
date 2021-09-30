@@ -1,6 +1,6 @@
 # Tutorial on Managing OBO Ontology Projects
 
-This tutorial is not about editing ontologies and managing the evolution of its content (aka ontology curation), but the general process of managing an ontology project overall. In this lesson, we will cover the following:
+This tutorial is not about editing ontologies and managing the evolution of their content (aka ontology curation), but the general process of managing an ontology project overall. In this lesson, we will cover the following:
 
 1. How to effectively manage an ontology project using GitHub projects and teams
 2. How to coordinate the evolution of ontologies across projects and grants
@@ -25,7 +25,7 @@ Without the above minimum criteria, the following recommendations will be very h
 
 Every ontology or group of related ontologies (sometimes it is easier to manage multiple ontologies at once, because their scope or technical workflows are quite uniform or they are heavily interrelated) should have:
 
-1. *at least two teams*, Curation Team and Technical Team, with clearly defined members. We recommend to create two teams on GitHub and keep its members always up to date (i.e. remove members that are not actively participating). Many of our projects furthermore have a third "core team", which is a more liberal team containing everyone from stakeholders, principal investigators, curators and users.
+1. *at least two teams*, Curation Team and Technical Team, with clearly defined members. We recommend to create two teams on GitHub and keep their members always up to date (i.e. remove members that are not actively participating). Many of our projects furthermore have a third "core team", which is a more liberal team containing everyone from stakeholders, principal investigators, curators and users.
 2. *two distinct project boards*: One for the Curation Team, and one for the Technical Team. The details on how to design the boards is up to the respective teams, but we found a simple 4 stage board with sections for `To Do` (issues that are important but not urgent), `Priority` (issues that are important and urgent), `In Progress` (issues that are being worked on), `Under review` (issues that need review) and `Done` (finished issues) the most useful. The least useful column on a project board is `Backlog`, as it clutters the board and creates a massive overhead in the rare times the team meets to discuss the next steps.
 3. *A documentation system* (often realised using `mkdocs` in OBO projects) with a page listing the members of the team. This page should provide links to all related team pages from Github and their project boards, as well as a table listing all current team members with the following information:
     - Name
@@ -40,15 +40,11 @@ Every ontology or group of related ontologies (sometimes it is easier to manage 
 
 1. Effective Ontology Pipeline Developers (OPDs) are extremely rare and are typically active across many different projects. Therefore *their attention is scattered*. Understanding and accepting this is key for the following points.
 1. Principal Investigators *explicitly assign target weekly hours* for Ontology Curators and Ontology Pipeline Developers to the project. These should be captured on the documentation systems team page (see above).
-1. The Ontology Curators are responsible for the entire Curation Team Board and the `To Do` and `Priority` columns of the Technical Team. The later is important: it is the job of the curation team to _prioritise the technical issues_. The Technical Team can add tickets to the `To Do` and `Priority` columns, but this usually happens only in response to a request from the Curation Team.
-1. When the technical team meets, the Principal Ontology Curator(s) (POC) are present, i.e. *the POCs are members of the technical team as well*. They will help clarifying the `Priority` tickets. The Technical Team is responsible to 
-    - assign issues and reviewers among themselves (ideally, the reviewer should be decided at the same time the issue is assigned)
-    - move issues from the `Priority` to the `In Progress` and later to the `Done` section.
-    - communicate through the POC to the PIs when resources are insufficient to address `Priority` issues.
-1. The Principal Ontology Curator is responsible for ensuring that new issues on the issue tracker are dealt with. Usually this happens in the following ways:
-    - They ensure that each _external_ issue (i.e. an issue from anyone outside the core team) is (a) responded to in a polite manner and (b) assigned to someone appropriate or politely rejected due to lack of resources.
-    - They ensure that each _internal_ issue is assigned to the person that made them. No issue should appear unassigned.
-    - The ensure that pull requests are (a) assigned to someone to handle and (b) merged in a timely manner. Too many open PRs cause problems with conflicts.
+2. The Ontology Curators are responsible for the entire Curation Team Board and the `To Do` and `Priority` columns of the Technical Team. The later is important: it is the job of the curation team to _prioritise the technical issues_. The Technical Team can add tickets to the `To Do` and `Priority` columns, but this usually happens only in response to a request from the Curation Team.
+3. When the technical team meets, the Principal Ontology Curator(s) (POC) are present, i.e. *the POCs are members of the technical team as well*. They will help clarifying the `Priority` tickets. The Technical Team is responsible to 
+   - assign issues and reviewers among themselves (ideally, the reviewer should be decided at the same time the issue is assigned)
+   - move issues from the `Priority` to the `In Progress` and later to the `Done` section.
+   - communicate through the POC to the PIs when resources are insufficient to address `Priority` issues.
 
 ## Best Practices
 
@@ -56,4 +52,3 @@ Every ontology or group of related ontologies (sometimes it is easier to manage 
 - Even if Google Docs are used to manage team meetings, at the end of each meetings *all open issues must be captured as GitHub tickets* and placed in the appropriate box on the board. We recommend that `Backlog` items are not added at all to the board - if they ever become important, they tend to resurface all by themselves.
 - The single most important point of failure is the absence of an Principal Ontology Curator with a *strong sense of ownership*. This should be the projects priority to determine first.
 - All new members of the project should undergo an onboarding. It is a good idea to prepare walkthroughs of the project (as video or pages in the documentation system) covering everything from Curation to Technical and Project Management.
-- The Principal Ontology Curator responsible for dealing with external issues should be named explicitly on the team page.
